@@ -1,7 +1,18 @@
 .header-section {
-  /* background-color: #2d9596; */
   color: #fff;
   width: 100%;
+  position: fixed;
+  z-index: 10;
+  transform: translateY(0);
+  transition: 0.5s all;
+}
+
+header.compaq {
+  background-color: #2d9596;
+}
+
+header.hide {
+  transform: translateY(-120px);
 }
 
 .header__content {

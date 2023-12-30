@@ -13,7 +13,19 @@
   transition: all 0.4s ease-in-out;
   border: 2px solid rgb(6 193 229);
   cursor: pointer;
+
   &:hover {
     background-color: transparent;
   }
+}
+
+/*  */
+.home__jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1rem;
+}
+
+.home__job {
+  border: 2px solid rgb(6 193 229);
 }

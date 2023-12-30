@@ -4,17 +4,40 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import "./Header.css";
 import Logo from "./Logo";
+import { useRef } from "react";
 
 const Header = () => {
+  const headerEl = useRef();
+  if (typeof window !== `undefined`) {
+    let prevScrollPosition = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+      const curScrollPosition = window.pageYOffset;
+      const difference = prevScrollPosition - curScrollPosition;
+      const { current } = headerEl;
+      // setMobileNav(false)
+      if (curScrollPosition > 100) {
+        current.classList.add("compaq");
+      } else {
+        current.classList.remove("compaq");
+      }
+      if (difference < 0) {
+        current.classList.add("hide");
+      } else {
+        current.classList.remove("hide");
+      }
+      prevScrollPosition = curScrollPosition;
+    });
+  }
+
   return (
-    <header className="header-section">
-      <Container>
+    <header className="header-section" ref={headerEl}>
+      <Container padding="25px 25px">
         <div className="header__content">
           <div className="header__logo">
             <Logo />
           </div>
           <div className="mobile-nav">
-          <RxHamburgerMenu />
+            <RxHamburgerMenu />
           </div>
           <ul className="header__links">
             <li>
@@ -42,6 +65,8 @@ const Header = () => {
                 Favorite
               </Link>
             </li>
+          </ul>
+          <ul className="header__links">
             <li>
               <Link className="header__link" to={"/signup"}>
                 Sign Up
