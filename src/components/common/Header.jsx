@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "./Container";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 import "./Header.css";
 import Logo from "./Logo";
@@ -11,6 +12,9 @@ const Header = () => {
         <div className="header__content">
           <div className="header__logo">
             <Logo />
+          </div>
+          <div className="mobile-nav">
+          <RxHamburgerMenu />
           </div>
           <ul className="header__links">
             <li>

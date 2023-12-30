@@ -1,0 +1,19 @@
+.home__section {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__section--button {
+  background-color: rgb(6 193 229);
+  padding: 13px 30px;
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.4s ease-in-out;
+  border: 2px solid rgb(6 193 229);
+  cursor: pointer;
+  &:hover {
+    background-color: transparent;
+  }
+}
