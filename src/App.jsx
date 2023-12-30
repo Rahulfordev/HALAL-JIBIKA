@@ -1,7 +1,9 @@
+import MainLayout from "./layout/MainLayout";
+
 function App() {
   return (
     <>
-      <h1>hello</h1>
+      <MainLayout />
     </>
   );
 }

@@ -4,8 +4,10 @@ import { createContext } from "react";
 export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
-  const value = {};
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  const providerData = {};
+  return (
+    <AuthContext.Provider value={providerData}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProviders;

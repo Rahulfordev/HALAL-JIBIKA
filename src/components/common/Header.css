@@ -1,0 +1,19 @@
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__links li {
+  list-style: none;
+}
+
+.header__link {
+  text-decoration: none;
+}

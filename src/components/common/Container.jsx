@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
-
+import "./Container.css";
 
 const Container = ({ children, padding }) => {
-  return <div style={{ padding }}>{children}</div>;
+  return (
+    <div className="container" style={{ padding }}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;
