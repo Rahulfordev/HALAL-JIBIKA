@@ -1,3 +1,8 @@
+.header-section {
+  background-color: #2d9596;
+  width: 100%;
+}
+
 .header__content {
   display: flex;
   align-items: center;
@@ -7,13 +12,24 @@
 .header__links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 10px;
 }
 
 .header__links li {
   list-style: none;
+  padding: 9px 20px;
+  border-radius: 2px;
+  transition: all 0.4s;
+  &:hover {
+    background-color: #0766ad;
+    /* background-color: #00cf5d; */
+    /* background-color: #0556f3; */
+    /* background-color: #c5e898; */
+  }
 }
 
 .header__link {
   text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
 }

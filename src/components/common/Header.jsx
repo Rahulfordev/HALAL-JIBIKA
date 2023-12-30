@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Container from "./Container";
-import './Header.css'
+
+import "./Header.css";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
@@ -8,7 +10,7 @@ const Header = () => {
       <Container>
         <div className="header__content">
           <div className="header__logo">
-            <h1>HALAL JIBIKA</h1>
+            <Logo />
           </div>
           <ul className="header__links">
             <li>
