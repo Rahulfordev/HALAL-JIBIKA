@@ -67,11 +67,26 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link className="header__link" to={"/login"}>
+              <Link
+                className="header__link explore-button button"
+                to={"/login"}
+              >
                 Sign In
               </Link>
             </li>
           </ul>
+          {/* <ul className="header__links users">
+            <li>
+              <Link className="header__link" to={"/signup"}>
+                <FaRegUserCircle /> Rahul Ali
+              </Link>
+            </li>
+            <li>
+              <Link className="header__link" to={"/login"}>
+                Sign Out <GoSignOut />
+              </Link>
+            </li>
+          </ul> */}
         </div>
       </Container>
     </header>

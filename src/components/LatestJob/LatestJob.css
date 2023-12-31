@@ -39,6 +39,14 @@
   stroke: none;
 }
 
+.home__job--location svg {
+  color: var(--hover-color);
+}
+
+.home__job--postDate svg {
+  color: var(--hover-color);
+}
+
 .home__job--ld {
   display: flex;
   align-items: center;
@@ -59,6 +67,17 @@
   gap: 1rem;
 }
 
+.job__rate {
+  display: flex;
+  align-items: center;
+}
+
+.job__rate--icon svg {
+  color: #ffb700;
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
 .home__job--se {
   display: flex;
   justify-content: space-between;
@@ -70,9 +89,12 @@
   font-weight: bolder;
   padding: 7px 0;
   transition: all 0.3s;
-  &:hover {
-    color: var(--hover-color);
-  }
+  color: var(--hover-color);
+}
+
+.home__Job--salary {
+  display: flex;
+  align-items: center;
 }
 
 .job__tag p {
@@ -95,9 +117,19 @@
   font-size: 17px;
 }
 
+.home__Job--salary svg {
+  color: var(--hover-color);
+}
+
 .home__job-sub {
   color: var(--li-color);
   font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.home__job-sub svg {
+  color: var(--hover-color);
 }
 
 @media screen and (max-width: 600px) {

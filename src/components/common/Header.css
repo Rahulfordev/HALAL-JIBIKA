@@ -56,6 +56,12 @@ header.hide {
   }
 }
 
+ul.header__links.users li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .header__link {
   text-decoration: none;
   font-size: 18px;

@@ -2,7 +2,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
-import { MdAttachMoney } from "react-icons/md"; 
+import { MdAttachMoney } from "react-icons/md";
 
 import "./LatestJob.css";
 const LatestJob = ({ jobs }) => {
@@ -21,9 +21,9 @@ const LatestJob = ({ jobs }) => {
             <h4 className="home__job--position">{position}</h4>
             <div className="home__job--ld">
               <p className="home__job--location">
-                <CiLocationOn color="#64666c" /> {location}
+                <CiLocationOn /> {location}
               </p>
-              <p>
+              <p className="home__job--postDate">
                 <CiCalendar /> {postDate}
               </p>
             </div>
@@ -52,31 +52,31 @@ const LatestJob = ({ jobs }) => {
       <div className="home__job--ts">
         <div className="job__tag">{tagMap}</div>
         <div className="job__rate">
-          <span>
+          <span className="job__rate--icon">
             <CiStar />
           </span>
-          <span>
+          <span className="job__rate--icon">
             <CiStar />
           </span>
-          <span>
+          <span className="job__rate--icon">
             <CiStar />
           </span>
-          <span>
+          <span className="job__rate--icon">
             <CiStar />
           </span>
-          <span>
+          <span className="job__rate--icon">
             <CiStar />
           </span>
         </div>
       </div>
       <div className="home__job--se">
-        <div>
+        <div className="home__job--ex--sa">
           <p className="home__Job--salary">
             <MdAttachMoney /> {salary}{" "}
             <span className="home__job-sub">/year</span>
           </p>
         </div>
-        <div>
+        <div className="home__job--ex--sa">
           <p className="home__job-sub">
             <CiCalendar /> {expireDate}
           </p>
