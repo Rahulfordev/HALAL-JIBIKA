@@ -1,0 +1,31 @@
+.home__job--main {
+  border: 2px solid rgb(6 193 229);
+  padding: 1rem;
+}
+
+.home__job--data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__job--info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home__job--ld {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.home__job--ts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job__tag {
+  display: flex;
+  gap: 1rem;
+}

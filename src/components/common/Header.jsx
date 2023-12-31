@@ -4,33 +4,33 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import "./Header.css";
 import Logo from "./Logo";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 const Header = () => {
-  const headerEl = useRef();
-  if (typeof window !== `undefined`) {
-    let prevScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", () => {
-      const curScrollPosition = window.pageYOffset;
-      const difference = prevScrollPosition - curScrollPosition;
-      const { current } = headerEl;
-      // setMobileNav(false)
-      if (curScrollPosition > 100) {
-        current.classList.add("compaq");
-      } else {
-        current.classList.remove("compaq");
-      }
-      if (difference < 0) {
-        current.classList.add("hide");
-      } else {
-        current.classList.remove("hide");
-      }
-      prevScrollPosition = curScrollPosition;
-    });
-  }
+  // const headerEl = useRef();
+  // if (typeof window !== `undefined`) {
+  //   let prevScrollPosition = window.pageYOffset;
+  //   window.addEventListener("scroll", () => {
+  //     const curScrollPosition = window.pageYOffset;
+  //     const difference = prevScrollPosition - curScrollPosition;
+  //     const { current } = headerEl;
+  //     // setMobileNav(false)
+  //     if (curScrollPosition > 100) {
+  //       current.classList.add("compaq");
+  //     } else {
+  //       current.classList.remove("compaq");
+  //     }
+  //     if (difference < 0) {
+  //       current.classList.add("hide");
+  //     } else {
+  //       current.classList.remove("hide");
+  //     }
+  //     prevScrollPosition = curScrollPosition;
+  //   });
+  // }
 
   return (
-    <header className="header-section" ref={headerEl}>
+    <header className="header-section" >
       <Container padding="25px 25px">
         <div className="header__content">
           <div className="header__logo">

@@ -25,7 +25,3 @@
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1rem;
 }
-
-.home__job {
-  border: 2px solid rgb(6 193 229);
-}
