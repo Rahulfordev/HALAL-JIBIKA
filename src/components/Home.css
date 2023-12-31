@@ -1,21 +1,20 @@
 .home__section {
-  height: calc(100vh - 100px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .home__section--button {
-  background-color: rgb(6 193 229);
+  background-color: transparent;
   padding: 13px 30px;
   font-size: 20px;
-  color: #fff;
+  color: var(--primary-color);
   transition: all 0.4s ease-in-out;
-  border: 2px solid rgb(6 193 229);
+  border: 1px solid var(--hover-color);
+  border-radius: 3px;
   cursor: pointer;
-
   &:hover {
-    background-color: transparent;
+    color: var(--parimary-secondary);
+    background-color: var(--hover-color);
   }
 }
 

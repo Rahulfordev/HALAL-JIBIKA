@@ -20,11 +20,24 @@
 .home__job--favorite {
   border-radius: 50%;
   border: 1px solid var(--border-color);
-  height: 37px;
-  width: 37px;
+  height: 40px;
+  width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.svgimage {
+  fill: var(--border-color);
+  transition: all 0.3s;
+  /* stroke: var(--border-color); */
+  /* stroke-width: 10px; */
+
+  &:hover {
+    fill: red;
+    stroke: none;
+  }
 }
 
 .home__job--ld {

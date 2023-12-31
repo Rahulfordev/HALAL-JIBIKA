@@ -1,5 +1,6 @@
+import "./Logo.css";
 const Logo = () => {
-  return <h1>HALAL JIBIKA</h1>;
+  return <h1 className="logo">HALAL JIBIKA</h1>;
 };
 
 export default Logo;

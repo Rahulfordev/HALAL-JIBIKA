@@ -30,8 +30,8 @@ const Header = () => {
   // }
 
   return (
-    <header className="header-section" >
-      <Container padding="25px 25px">
+    <header className="header-section">
+      <Container>
         <div className="header__content">
           <div className="header__logo">
             <Logo />
