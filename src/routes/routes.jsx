@@ -4,9 +4,9 @@ import Home from "../components/Home";
 import Jobs from "../components/Jobs";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Favorite from "../components/Favorite";
-import Signup from "../components/Signup"; 
+import Favorite from "../components/Favorite"; 
 import SignIn from "../components/SignIn";
+import Signup from "../components/SignUp";
 
 const routes = createBrowserRouter([
   {
@@ -38,9 +38,9 @@ const routes = createBrowserRouter([
         element: <Signup />,
       },
       {
-        path: '/login',
-        element: <SignIn />
-      }
+        path: "/login",
+        element: <SignIn />,
+      },
     ],
   },
 ]);
