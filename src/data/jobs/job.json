@@ -10,7 +10,7 @@
       "location": "San Francisco, CA 94102, USA",
       "tag": ["Full-time", "On-site"],
       "postDate": "1 day ago",
-      "salary": "$85,000 - $115,000/year",
+      "salary": "$85,000 - $115,000",
       "expireDate": "18 days left to apply"
     },
     {
@@ -23,7 +23,7 @@
       "location": "Seattle, WA 98104, USA",
       "tag": ["Full-time", "Remote"],
       "postDate": "3 days ago",
-      "salary": "$80,000 - $105,000/year",
+      "salary": "$80,000 - $105,000",
       "expireDate": "20 days left to apply"
     },
     {
@@ -36,7 +36,7 @@
       "location": "New York, NY 10001, USA",
       "tag": ["Part-time", "On-site"],
       "postDate": "5 days ago",
-      "salary": "$75,000 - $95,000/year",
+      "salary": "$75,000 - $95,000",
       "expireDate": "15 days left to apply"
     },
     {
@@ -49,7 +49,7 @@
       "location": "Menlo Park, CA 94025, USA",
       "tag": ["Full-time", "Remote"],
       "postDate": "6 days ago",
-      "salary": "$78,000 - $100,000/year",
+      "salary": "$78,000 - $100,000",
       "expireDate": "16 days left to apply"
     },
     {
@@ -62,7 +62,7 @@
       "location": "Los Angeles, CA 90001, USA",
       "tag": ["Full-time", "On-site"],
       "postDate": "4 days ago",
-      "salary": "$82,000 - $110,000/year",
+      "salary": "$82,000 - $110,000",
       "expireDate": "19 days left to apply"
     },
     {
@@ -75,7 +75,7 @@
       "location": "Palo Alto, CA 94304, USA",
       "tag": ["Full-time", "On-site"],
       "postDate": "2 days ago",
-      "salary": "$80,000 - $105,000/year",
+      "salary": "$80,000 - $105,000",
       "expireDate": "21 days left to apply"
     },
     {
@@ -88,7 +88,7 @@
       "location": "Austin, TX 78701, USA",
       "tag": ["Part-time", "Remote"],
       "postDate": "7 days ago",
-      "salary": "$76,000 - $98,000/year",
+      "salary": "$76,000 - $98,000",
       "expireDate": "14 days left to apply"
     },
     {
@@ -101,7 +101,7 @@
       "location": "San Francisco, CA 94103, USA",
       "tag": ["Full-time", "On-site"],
       "postDate": "5 days ago",
-      "salary": "$79,000 - $102,000/year",
+      "salary": "$79,000 - $102,000",
       "expireDate": "17 days left to apply"
     },
     {
@@ -114,7 +114,7 @@
       "location": "Chicago, IL 60601, USA",
       "tag": ["Full-time", "Remote"],
       "postDate": "3 days ago",
-      "salary": "$77,000 - $100,000/year",
+      "salary": "$77,000 - $100,000",
       "expireDate": "23 days left to apply"
     },
     {
@@ -127,7 +127,7 @@
       "location": "San Jose, CA 95113, USA",
       "tag": ["Full-time", "On-site"],
       "postDate": "6 days ago",
-      "salary": "$81,000 - $108,000/year",
+      "salary": "$81,000 - $108,000",
       "expireDate": "16 days left to apply"
     }
   ]

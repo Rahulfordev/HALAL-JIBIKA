@@ -3,6 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
+import { MdAttachMoney } from "react-icons/md";
 
 import "./HomeDetails.css";
 const HomeData = ({ jobs }) => {
@@ -32,7 +33,7 @@ const HomeData = ({ jobs }) => {
             <h4 className="home__job--position">{position}</h4>
             <div className="home__job--ld">
               <p>
-                <CiLocationOn /> {location}
+                <CiLocationOn color="#64666c" /> {location}
               </p>
               <p>
                 <CiCalendar /> {postDate}
@@ -62,6 +63,18 @@ const HomeData = ({ jobs }) => {
           <span>
             <CiStar />
           </span>
+        </div>
+      </div>
+      <div className="home__job--se">
+        <div>
+          <p className="home__Job--salary">
+            <MdAttachMoney /> {salary} <span  className="home__job-sub">/year</span>
+          </p>
+        </div>
+        <div>
+          <p className="home__job-sub">
+            <CiCalendar /> {expireDate}
+          </p>
         </div>
       </div>
     </div>

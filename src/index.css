@@ -4,9 +4,18 @@ html {
   overflow-y: scroll;
 }
 
+:root {
+  --primary-color: #121212;
+  --parimary-secondary: #fff;
+  --hover-color: #14a077;
+  --icon-hover: #eb4d4d;
+  --border-color: #e5e5e5;
+  --li-color: #64666c;
+}
+
 body {
-  background-color: #29adb2;
-  color: #fff;
+  background-color: #fff;
+  color: #222;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -1,8 +1,11 @@
 .home__job--main {
-  border: 2px solid rgb(6 193 229);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s;
   padding: 1rem;
+  &:hover {
+    border: 1px solid var(--hover-color);
+  }
 }
-
 .home__job--data {
   display: flex;
   justify-content: space-between;
@@ -14,18 +17,73 @@
   gap: 2rem;
 }
 
+.home__job--favorite {
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  height: 37px;
+  width: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home__job--ld {
   display: flex;
   align-items: center;
   gap: 15px;
+  color: var(--li-color);
+  padding-bottom: 15px;
 }
 
 .home__job--ts {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
 }
 
 .job__tag {
   display: flex;
   gap: 1rem;
+}
+
+.home__job--se {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0px 0;
+}
+
+.home__job--position {
+  font-size: 22px;
+  font-weight: bolder;
+  padding: 7px 0;
+  transition: all 0.3s;
+  &:hover {
+    color: var(--hover-color);
+  }
+}
+
+.job__tag p {
+  background-color: #f1f1f1;
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 52px;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--hover-color);
+    color: var(--parimary-secondary);
+  }
+}
+
+.home__Job--salary {
+  color: var(--primary-color);
+  font-weight: bolder;
+  font-size: 17px;
+}
+
+.home__job-sub {
+  color: var(--li-color);
+  font-size: 15px;
 }
