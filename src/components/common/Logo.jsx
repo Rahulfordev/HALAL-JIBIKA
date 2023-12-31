@@ -1,6 +1,10 @@
 import "./Logo.css";
 const Logo = () => {
-  return <h1 className="logo">HALAL JIBIKA</h1>;
+  return (
+    <h1 className="logo">
+      <span>H</span>ALAL <span>J</span>IBIKA
+    </h1>
+  );
 };
 
 export default Logo;

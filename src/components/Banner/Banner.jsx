@@ -7,8 +7,8 @@ const Banner = () => {
     <div className="home__banner">
       <div className="home__banner--headline">
         <div className="home__banner--content">
-          <h1>
-            Find The Job That Fits <br /> Your Life
+          <h1 className="hero__banner--title">
+            Find The Job That Fits <br /> <span>Your Life</span>
           </h1>
           <p>
             Resume-Library is a true performance-based job board. Enjoy custom
@@ -17,7 +17,7 @@ const Banner = () => {
           </p>
         </div>
         <div className="home__banner--explore">
-          <Link className="button explore-button">Explore Now</Link>
+          <Link className="button home__banner-button">Explore Now</Link>
         </div>
       </div>
       <div>

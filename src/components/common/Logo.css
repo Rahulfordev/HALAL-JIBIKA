@@ -1,3 +1,13 @@
 .logo {
   color: black;
 }
+
+.logo span {
+  color: var(--hover-color);
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 20px;
+  }
+}

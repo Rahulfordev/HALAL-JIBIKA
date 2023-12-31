@@ -32,11 +32,16 @@ header.hide {
   gap: 10px;
 }
 
-.header__links li {
+.header__links .active {
+  color: var(--parimary-secondary);
+  background-color: var(--hover-color);
+}
+
+.header__links a {
   list-style: none;
   padding: 9px 20px;
   border-radius: 3px;
-  transition: all 0.4s;
+  transition: all 0.3s;
   color: black;
   &:hover {
     /* background-color: #0766ad; */
@@ -44,8 +49,10 @@ header.hide {
     /* background-color: #0556f3; */
     /* background-color: #5f8670; */
     /* background-color: rgb(0, 145, 173); */
-    background-color: rgb(6 193 229);
+    /* background-color: rgb(6 193 229); */
     /* background-color: #c5e898; rgb(0 214 255)*/
+    background-color: var(--hover-color);
+    color: var(--parimary-secondary);
   }
 }
 

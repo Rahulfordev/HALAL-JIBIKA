@@ -1,9 +1,9 @@
 .home__job--main {
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   transition: all 0.4s;
   padding: 1rem;
   &:hover {
-    border: 1px solid var(--hover-color);
+    border: 2px solid var(--hover-color);
   }
 }
 .home__job--data {
@@ -26,18 +26,17 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .svgimage {
   fill: var(--border-color);
   transition: all 0.3s;
-  /* stroke: var(--border-color); */
-  /* stroke-width: 10px; */
+}
 
-  &:hover {
-    fill: red;
-    stroke: none;
-  }
+.home__job--favorite:hover .svgimage {
+  fill: red;
+  stroke: none;
 }
 
 .home__job--ld {

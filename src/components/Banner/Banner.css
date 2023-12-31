@@ -11,6 +11,24 @@
 
 .home__banner--content h1 {
   line-height: 1.1;
+  font-size: 40px;
+}
+
+.home__banner--content p {
+  max-width: 540px;
+}
+
+.hero__banner--title span {
+  color: var(--hover-color);
+}
+
+.home__banner-button {
+  background-color: var(--hover-color);
+  color: var(--parimary-secondary);
+  &:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+  }
 }
 
 @media screen and (max-width: 600px) {

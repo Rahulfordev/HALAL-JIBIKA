@@ -1,7 +1,20 @@
 html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14a077;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
 }
 
 :root {
@@ -29,6 +42,10 @@ button {
   border: none;
   outline: none;
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 h1,

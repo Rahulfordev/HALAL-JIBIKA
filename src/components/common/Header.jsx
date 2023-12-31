@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -38,33 +38,27 @@ export const Header = () => {
           </div>
           <div className="mobile-nav">
             <RxHamburgerMenu />
-          </div>  
+          </div>
           <ul className="header__links">
-            <li>
-              <Link className="header__link" to={"/"}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="header__link" to={"/jobs"}>
-                Jobs
-              </Link>
-            </li>
-            <li>
-              <Link className="header__link" to={"/about"}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link className="header__link" to={"/contact"}>
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link className="header__link" to={"/favorite"}>
-                Favorite
-              </Link>
-            </li>
+            <NavLink className="header__link" to={"/"}>
+              Home
+            </NavLink>
+
+            <NavLink className="header__link" to={"/jobs"}>
+              Jobs
+            </NavLink>
+
+            <NavLink className="header__link" to={"/about"}>
+              About
+            </NavLink>
+
+            <NavLink className="header__link" to={"/contact"}>
+              Contact
+            </NavLink>
+
+            <NavLink className="header__link" to={"/favorite"}>
+              Favorite
+            </NavLink>
           </ul>
           <ul className="header__links">
             <li>
@@ -83,5 +77,3 @@ export const Header = () => {
     </header>
   );
 };
-
- 
