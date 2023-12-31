@@ -1,4 +1,4 @@
-import Container from "./common/Container";
+import Container from "../../components/common/Container";
 
 const Signup = () => {
   return (

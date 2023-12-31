@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Home from "../components/Home";
-import Jobs from "../components/Jobs";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Favorite from "../components/Favorite"; 
-import SignIn from "../components/SignIn";
-import Signup from "../components/SignUp";
+import Home from "../pages/Home/Home";
+import Jobs from "../pages/Jobs/Jobs";
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
+import Favorite from "../pages/Favorite/Favorite";
+import SignIn from "../pages/SignIn/SignIn";
+import Signup from "../pages/SignUp/SignUp";
 
 const routes = createBrowserRouter([
   {

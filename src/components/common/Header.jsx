@@ -6,7 +6,7 @@ import "./Header.css";
 import Logo from "./Logo";
 // import { useRef } from "react";
 
-const Header = () => {
+export const Header = () => {
   // const headerEl = useRef();
   // if (typeof window !== `undefined`) {
   //   let prevScrollPosition = window.pageYOffset;
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           <div className="mobile-nav">
             <RxHamburgerMenu />
-          </div>
+          </div>  
           <ul className="header__links">
             <li>
               <Link className="header__link" to={"/"}>
@@ -84,4 +84,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+ 

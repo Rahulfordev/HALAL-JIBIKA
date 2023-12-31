@@ -1,24 +1,17 @@
-.home__section {
-  text-align: center;
+.home__explore--all {
   margin-top: 2rem;
+  text-align: center;
 }
 
-.home__section--button {
+.explore-button {
   background-color: transparent;
-  padding: 13px 30px;
-  font-size: 20px;
   color: var(--primary-color);
-  transition: all 0.4s ease-in-out;
-  border: 1px solid var(--hover-color);
-  border-radius: 3px;
-  cursor: pointer;
   &:hover {
-    color: var(--parimary-secondary);
+    color: var(--parimary-secondary) !important;
     background-color: var(--hover-color);
   }
 }
 
-/*  */
 .home__jobs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));

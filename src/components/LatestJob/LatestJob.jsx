@@ -1,25 +1,13 @@
 /* eslint-disable react/prop-types */
-import { CiHeart } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
-import hartImg from "../assets/red-heart-icon.svg";
+// import hartImg from "../assets/red-heart-icon.svg";
 
-import "./HomeDetails.css";
-const HomeData = ({ jobs }) => {
-  const {
-    title,
-    companyName,
-    description,
-    postDate,
-    expireDate,
-    salary,
-    location,
-    position,
-    logo,
-    tag,
-  } = jobs;
+import "./LatestJob.css";
+ const LatestJob = ({ jobs }) => {
+  const { postDate, expireDate, salary, location, position, logo, tag } = jobs;
 
   let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
@@ -100,4 +88,4 @@ const HomeData = ({ jobs }) => {
   );
 };
 
-export default HomeData;
+export default LatestJob;
