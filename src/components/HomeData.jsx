@@ -32,7 +32,7 @@ const HomeData = ({ jobs }) => {
           <div>
             <h4 className="home__job--position">{position}</h4>
             <div className="home__job--ld">
-              <p>
+              <p className="home__job--location">
                 <CiLocationOn color="#64666c" /> {location}
               </p>
               <p>
@@ -68,7 +68,8 @@ const HomeData = ({ jobs }) => {
       <div className="home__job--se">
         <div>
           <p className="home__Job--salary">
-            <MdAttachMoney /> {salary} <span  className="home__job-sub">/year</span>
+            <MdAttachMoney /> {salary}{" "}
+            <span className="home__job-sub">/year</span>
           </p>
         </div>
         <div>

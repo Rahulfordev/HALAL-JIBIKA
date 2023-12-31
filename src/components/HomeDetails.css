@@ -87,3 +87,23 @@
   color: var(--li-color);
   font-size: 15px;
 }
+
+@media screen and (max-width: 600px) {
+  .home__job--ld {
+    flex-direction: column;
+    align-items: start;
+    gap: 1px;
+  }
+
+  .home__job--se {
+    flex-direction: column;
+  }
+
+  .home__job--position {
+    font-size: 12px;
+  }
+
+  .home__job--location {
+    font-size: 10px;
+  }
+}
