@@ -8,8 +8,8 @@ const Jobs = ({ clice }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const reponse = await fetch("../../../src/data/jobs/job.json");
-      const data = await reponse.json();
+      const reponse = await fetch("/public/job.json");
+      const data = await reponse?.json();
       setJobs(data);
     };
     fetchData();
