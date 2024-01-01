@@ -3,6 +3,7 @@ import { TbEye } from "react-icons/tb";
 
 import Container from "../../components/common/Container";
 import "./SignUp.css";
+import { SignInDefault } from "../../components/common";
 const Signup = () => {
   return (
     <div className="signup-section">
@@ -41,9 +42,11 @@ const Signup = () => {
                 required=""
               />
             </div>
-            <button type="submit">Sign Up</button>
+            <button className="signUp__button" type="submit">
+              Sign Up
+            </button>
           </form>
-
+          <SignInDefault />
           <div className="go__signup">
             <p>
               Have an account already? <Link to={"/login"}>Log in</Link>

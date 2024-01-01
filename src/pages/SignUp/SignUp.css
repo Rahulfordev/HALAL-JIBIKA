@@ -30,12 +30,20 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-button {
+.signUp__button,
+.signIn__button {
   width: 100%;
   padding: 12px;
   border-radius: 30px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.signUp__button:hover,
+.signIn__button:hover {
+  background-color: var(--parimary-secondary);
+  border-color: var(--hover-color);
+  color: var(--hover-color) !important;
 }
 
 input[type="text"]:focus,

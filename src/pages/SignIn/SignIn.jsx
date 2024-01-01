@@ -29,7 +29,10 @@ const SignIn = () => {
                 {/* <TbEye id="togglePassword" /> */}
               </div>
             </div>
-            <button type="submit">Sign in</button>
+            <button className="signIn__button" type="submit">
+              {/* Sign in */}
+              Login
+            </button>
           </form>
           <div className="forgot__password">
             <Link className="forgot__password--button">Forgot password?</Link>
