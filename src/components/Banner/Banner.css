@@ -38,4 +38,8 @@
     margin-bottom: 2rem;
     gap: 2rem;
   }
+
+  .home__banner--image img {
+    max-width: 100%;
+  }
 }

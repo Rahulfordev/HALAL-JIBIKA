@@ -20,7 +20,7 @@ const Banner = () => {
           <Link className="button home__banner-button">Explore Now</Link>
         </div>
       </div>
-      <div>
+      <div className="home__banner--image">
         <img src={HeroImage} alt="hero--image" />
       </div>
     </div>

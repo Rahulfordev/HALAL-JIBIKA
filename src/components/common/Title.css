@@ -1,0 +1,21 @@
+.home__job--titles {
+  text-align: center;
+}
+
+.home__job--titles span {
+  color: var(--hover-color);
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+.home__job--titles h2 {
+  font-size: 35px;
+  padding: 12px 0;
+}
+
+.home__job--titles p {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding-bottom: 1.5rem;
+  color: var(--li-color);
+}
