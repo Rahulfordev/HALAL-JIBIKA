@@ -10,7 +10,7 @@
 
 .footer__icons {
   display: flex;
-  gap: 1rem;
+  gap: 12px;
   align-items: center;
 }
 
@@ -43,6 +43,8 @@
 .footer__items {
   display: grid;
   grid-template-columns: repeat(auto-fit, 17.1rem);
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .footer-item h4 {
@@ -86,6 +88,7 @@
 }
 
 .footer-copyright {
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -96,6 +99,7 @@
 @media screen and (max-width: 800px) {
   .footer__items {
     grid-template-columns: repeat(auto-fit, 10rem);
+    justify-content: center;
   }
 
   .footer__head--content {

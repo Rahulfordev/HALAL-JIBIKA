@@ -1,45 +1,53 @@
-import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { TbEye } from "react-icons/tb";
+
 import Container from "../../components/common/Container";
-
+import "./SignUp.css";
 const Signup = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm();
-
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data));
-  };
-
-
   return (
     <div className="signup-section">
       <Container>
-      <form onSubmit={handleSubmit(onSubmit)}>
-      <label>First Name</label>
-      <input
-        {...register("firstName", {
-          required: true,
-          maxLength: 20,
-          pattern: /^[A-Za-z]+$/i
-        })}
-      />
-      {errors?.firstName?.type === "required" && <p>This field is required</p>}
-      {errors?.firstName?.type === "maxLength" && (
-        <p>First name cannot exceed 20 characters</p>
-      )}
-      {errors?.firstName?.type === "pattern" && (
-        <p>Alphabetical characters only</p>
-      )} 
-      <input {...register("age", { min: 18, max: 99 })} />
-      <input {...register("age", { min: 18, max: 99 })} />
-      <input {...register("age", { min: 18, max: 99 })} />
-      {errors.age && (
-        <p>You Must be older then 18 and younger then 99 years old</p>
-      )}
-      <input type="submit" />
-    </form>
+        <div className="registration__form--container">
+          <h3 className="account-title">Sign up</h3>
+          <form className="registration-form">
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" required="" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" required="" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password:</label>
+              <div className="password-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required=""
+                />
+                <TbEye id="togglePassword" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirm Password:</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                required=""
+              />
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <div className="go__signup">
+            <p>
+              Have an account already? <Link to={"/login"}>Log in</Link>
+            </p>
+          </div>
+        </div>
       </Container>
     </div>
   );

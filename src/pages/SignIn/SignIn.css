@@ -1,0 +1,13 @@
+.forgot__password {
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  border: 2px solid var(--hover-color);
+  margin-top: 1rem;
+  border-radius: 30px;
+}
+
+
+.go__signup {
+  margin-top: 1.5rem;
+}

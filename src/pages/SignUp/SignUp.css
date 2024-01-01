@@ -1,0 +1,63 @@
+.registration__form--container,
+.login__form--container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(145, 145, 145, 0.1),
+    0 8px 16px rgba(200, 200, 200, 0.1);
+}
+
+.account-title {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--hover-color);
+  box-shadow: 0 0 5px rgba(53, 185, 58, 0.5);
+}
+
+button {
+  background-color: var(--hover-color);
+  color: var(--parimary-secondary) !important;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+.password-container {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
