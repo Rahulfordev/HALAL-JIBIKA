@@ -8,9 +8,17 @@ const Jobs = ({ clice }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const reponse = await fetch("/public/job.json");
-      const data = await reponse?.json();
-      setJobs(data);
+      try {
+        const response = await fetch("/job.json");
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setJobs(data);
+      } catch (error) {
+        console.error("Error feaching data", error);
+      }
     };
     fetchData();
   }, []);
