@@ -9,14 +9,9 @@ const Home = () => {
   return (
     <div className="home-section">
       <Container>
-        <Banner
-          desc="Resume-Library is a true performance-based job board. Enjoy custom
-            hiring products and access to up to 10,000 new resume registrations
-            daily, with no subscriptions or user licences."
-        />
+        <Banner />
         <div>
           <Title />
-
           <Jobs clice={6} />
         </div>
         <div className="home__explore--all">

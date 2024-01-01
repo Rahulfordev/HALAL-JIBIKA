@@ -4,7 +4,21 @@ import { TbEye } from "react-icons/tb";
 import Container from "../../components/common/Container";
 import "./SignUp.css";
 import { SignInDefault } from "../../components/common";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const Signup = () => {
+  const { user, signInWithGoogle } = useContext(AuthContext);
+  console.log(user);
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="signup-section">
       <Container>
@@ -46,7 +60,7 @@ const Signup = () => {
               Sign Up
             </button>
           </form>
-          <SignInDefault />
+          <SignInDefault handleSignInWithGoogle={handleSignInWithGoogle} />
           <div className="go__signup">
             <p>
               Have an account already? <Link to={"/login"}>Log in</Link>

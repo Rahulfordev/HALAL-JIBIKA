@@ -3,8 +3,22 @@ import { Link } from "react-router-dom";
 import Container from "../../components/common/Container";
 import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const SignIn = () => {
+  const { user, signInWithGoogle } = useContext(AuthContext);
+  console.log(user);
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div>
       <Container>
@@ -30,14 +44,13 @@ const SignIn = () => {
               </div>
             </div>
             <button className="signIn__button" type="submit">
-              {/* Sign in */}
-              Login
+              Sign in
             </button>
           </form>
           <div className="forgot__password">
             <Link className="forgot__password--button">Forgot password?</Link>
           </div>
-          <SignInDefault />
+          <SignInDefault handleSignInWithGoogle={handleSignInWithGoogle} />
           <div className="go__signup">
             <p>
               Don't have an account? <Link to={"/signup"}>Sign up</Link>

@@ -7,10 +7,23 @@ import { RxCross2 } from "react-icons/rx";
 
 import "./Header.css";
 import Logo from "./Logo";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 // import { useRef } from "react";
 
 export const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  console.log(user);
   // const headerEl = useRef();
   // if (typeof window !== `undefined`) {
   //   let prevScrollPosition = window.pageYOffset;
@@ -81,33 +94,41 @@ export const Header = () => {
               Favorite
             </NavLink>
           </ul>
-          <ul className="header__links">
-            <li>
-              <NavLink className="header__link" to={"/signup"}>
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="header__link explore-button button"
-                to={"/login"}
-              >
-                Sign In
-              </NavLink>
-            </li>
-          </ul>
-          {/* <ul className="header__links users">
-            <li>
-              <Link className="header__link" to={"/signup"}>
-                <FaRegUserCircle /> Rahul Ali
-              </Link>
-            </li>
-            <li>
-              <Link className="header__link" to={"/login"}>
-                Sign Out <GoSignOut />
-              </Link>
-            </li>
-          </ul> */}
+          {user ? (
+            <ul className="header__links users">
+              <li>
+                <Link className="header__link" to={"/signup"}>
+                  <img src={user?.photoURL} alt="user-photo" />
+                  {user.displayName}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={handleSignOut}
+                  className="header__link"
+                  to={"/login"}
+                >
+                  Sign Out <GoSignOut />
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <ul className="header__links">
+              <li>
+                <NavLink className="header__link" to={"/signup"}>
+                  Sign Up
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="header__link explore-button button"
+                  to={"/login"}
+                >
+                  Sign In
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </div>
 
         {/* mobile menu li start */}

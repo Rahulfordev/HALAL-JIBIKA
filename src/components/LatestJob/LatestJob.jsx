@@ -4,8 +4,10 @@ import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 
 import "./LatestJob.css";
+import { Link } from "react-router-dom";
 const LatestJob = ({ job }) => {
-  const { postDate, expireDate, salary, location, position, logo, tag } = job;
+  const { id, postDate, expireDate, salary, location, position, logo, tag } =
+    job;
 
   let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
@@ -148,7 +150,8 @@ const LatestJob = ({ job }) => {
           </div>
         </div>
       </div>
-      <button>Apply</button>
+
+      <Link to={`jobdetails/${id}`}>Apply</Link>
     </div>
   );
 };

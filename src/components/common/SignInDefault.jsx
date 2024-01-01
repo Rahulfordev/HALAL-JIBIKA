@@ -1,11 +1,15 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import "./SignInDefault.css";
 
-export const SignInDefault = () => {
+export const SignInDefault = ({ handleSignInWithGoogle }) => {
   return (
     <>
       <div className="signIn__default">
-        <Link className="signIn__default--content">
+        <Link
+          onClick={handleSignInWithGoogle}
+          className="signIn__default--content"
+        >
           <div className="signIn__default--icon">
             <svg
               version="1.1"

@@ -14,10 +14,9 @@ const Jobs = ({ clice }) => {
     };
     fetchData();
   }, []);
-  console.log(jobs.jobs);
   return (
     <div className="home__jobs">
-      {jobs?.jobs?.slice(0, clice).map((job) => (
+      {jobs.jobs?.slice(0, clice).map((job) => (
         <LatestJob key={job.id} job={job} />
       ))}
     </div>
