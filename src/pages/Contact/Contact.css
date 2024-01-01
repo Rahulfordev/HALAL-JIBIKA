@@ -1,0 +1,75 @@
+.contact-form--container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(145, 145, 145, 0.1),
+    0 8px 16px rgba(200, 200, 200, 0.1);
+}
+
+.grid-input {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 340px);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form--container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(145, 145, 145, 0.1),
+      0 8px 16px rgba(200, 200, 200, 0.1);
+  }
+}
+
+.account-title {
+  text-align: center;
+}
+
+.account-title span {
+  color: var(--hover-color);
+  font-family: math;
+  font-weight: 900;
+}
+
+.contact__form--group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact__form--group > input[type="text"],
+.contact__form--group > input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.contact__form--group > input[type="text"]:focus,
+.contact__form--group > input[type="email"]:focus {
+  outline: none;
+  border-color: var(--hover-color);
+  box-shadow: 0 0 5px rgba(53, 185, 58, 0.5);
+}
+
+.contact__button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--hover-color);
+  color: var(--parimary-secondary) !important;
+  border: 2px solid var(--hover-color);
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    color: var(--hover-color) !important;
+    background-color: var(--parimary-secondary);
+    border: 2px solid var(--hover-color);
+  }
+}

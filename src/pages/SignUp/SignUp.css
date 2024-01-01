@@ -32,7 +32,7 @@ input[type="email"],
 input[type="password"],
 button {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   border-radius: 30px;
   border: 1px solid #ccc;
   box-sizing: border-box;
