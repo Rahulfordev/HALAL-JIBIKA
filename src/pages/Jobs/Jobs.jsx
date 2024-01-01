@@ -16,7 +16,7 @@ const Jobs = ({ clice }) => {
   }, []);
   return (
     <div className="home__jobs">
-      {jobs.jobs?.slice(0, clice).map((job) => (
+      {jobs.slice(0, clice).map((job) => (
         <LatestJob key={job.id} job={job} />
       ))}
     </div>
