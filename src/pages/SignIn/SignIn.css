@@ -5,8 +5,11 @@
   border: 2px solid var(--hover-color);
   margin-top: 1rem;
   border-radius: 30px;
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: 0 0 8px rgba(53, 185, 58, 0.5);
+  }
 }
-
 
 .go__signup {
   margin-top: 1.5rem;

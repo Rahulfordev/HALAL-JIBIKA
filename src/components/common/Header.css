@@ -37,6 +37,12 @@ header.hide {
   background-color: var(--hover-color);
 }
 
+.mobile__menu--header__links a:hover {
+  color: var(--parimary-secondary);
+  background-color: var(--hover-color);
+  
+}
+
 .header__links a {
   list-style: none;
   padding: 9px 20px;

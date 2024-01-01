@@ -83,17 +83,17 @@ export const Header = () => {
           </ul>
           <ul className="header__links">
             <li>
-              <Link className="header__link" to={"/signup"}>
+              <NavLink className="header__link" to={"/signup"}>
                 Sign Up
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 className="header__link explore-button button"
                 to={"/login"}
               >
                 Sign In
-              </Link>
+              </NavLink>
             </li>
           </ul>
           {/* <ul className="header__links users">
@@ -136,16 +136,13 @@ export const Header = () => {
               </NavLink>
             </ul>
             <ul className="mobile__menu--header__links">
-              <li>
-                <Link className="mobile__menu--header__link" to={"/signup"}>
-                  Sign Up
-                </Link>
-              </li>
-              <li>
-                <Link className="mobile__menu--header__link" to={"/login"}>
-                  Sign In
-                </Link>
-              </li>
+              <NavLink className="mobile__menu--header__link" to={"/signup"}>
+                Sign Up
+              </NavLink>
+
+              <NavLink className="mobile__menu--header__link" to={"/login"}>
+                Sign In
+              </NavLink>
             </ul>
           </div>
         )}

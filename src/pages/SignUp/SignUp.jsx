@@ -8,7 +8,9 @@ const Signup = () => {
     <div className="signup-section">
       <Container>
         <div className="registration__form--container">
-          <h3 className="account-title">Sign up</h3>
+          <h3 className="account-title">
+            Sign up to <span>HALAL JIBIKA</span>
+          </h3>
           <form className="registration-form">
             <div className="form-group">
               <label htmlFor="name">Name:</label>

@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+.account-title span {
+  color: var(--hover-color);
+  font-family: math;
+  font-weight: 900;
+}
+
 .form-group {
   margin-bottom: 15px;
 }

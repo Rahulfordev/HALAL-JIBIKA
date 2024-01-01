@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 import Container from "../../components/common/Container";
+import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
 
 const SignIn = () => {
@@ -8,7 +9,9 @@ const SignIn = () => {
     <div>
       <Container>
         <div className="login__form--container">
-          <h3 className="account-title">Sign in</h3>
+          <h3 className="account-title">
+            Sign in to <span>HALAL JIBIKA</span>
+          </h3>
           <form className="login-form">
             <div className="form-group">
               <label htmlFor="email">Email:</label>
@@ -31,6 +34,7 @@ const SignIn = () => {
           <div className="forgot__password">
             <Link className="forgot__password--button">Forgot password?</Link>
           </div>
+          <SignInDefault />
           <div className="go__signup">
             <p>
               Don't have an account? <Link to={"/signup"}>Sign up</Link>
