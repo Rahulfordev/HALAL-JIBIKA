@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../../components/common/Container";
 import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
@@ -7,8 +7,35 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const SignIn = () => {
-  const { user, signInWithGoogle } = useContext(AuthContext);
+  const { user, signIn, signInWithGoogle } = useContext(AuthContext);
   console.log(user);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
@@ -26,7 +53,7 @@ const SignIn = () => {
           <h3 className="account-title">
             Sign in to <span>HALAL JIBIKA</span>
           </h3>
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleSignIn}>
             <div className="form-group">
               <label htmlFor="email">Email:</label>
               <input type="email" id="email" name="email" required="" />

@@ -1,0 +1,13 @@
+.job__details--container {
+  display: flex;
+}
+
+.job__details--one{
+   margin-bottom: 2rem;
+}
+
+.job__details--one,
+.job__details--two {
+  border: 2px solid #a49c9c;
+  padding: 1rem;
+}

@@ -47,7 +47,6 @@ export const Header = () => {
   // }
 
   const [isShow, setIsShow] = useState(false);
-
   return (
     <header className="header-section">
       <Container>
@@ -57,10 +56,15 @@ export const Header = () => {
               <Logo />
             </div>
             <ul className="mobile__nav--items">
-              <li className="mobile__nav--user">
-                <FaRegUserCircle />
-                <span>Rahul Ali</span>
-              </li>
+              {user?.email ? (
+                <li className="mobile__nav--user header__link">
+                  <img
+                    src={user?.photoURL ? user?.photoURL : <FaRegUserCircle />}
+                    alt=""
+                  />
+                  <span>{user.displayName}</span>
+                </li>
+              ) : null}
               <li
                 className="mobile__nab--hamburger"
                 onClick={() => setIsShow(!isShow)}
@@ -98,7 +102,10 @@ export const Header = () => {
             <ul className="header__links users">
               <li>
                 <Link className="header__link" to={"/signup"}>
-                  <img src={user?.photoURL} alt="user-photo" />
+                  <img
+                    src={user?.photoURL ? user?.photoURL : <FaRegUserCircle />}
+                    alt=""
+                  />
                   {user.displayName}
                 </Link>
               </li>
@@ -156,15 +163,36 @@ export const Header = () => {
                 Favorite
               </NavLink>
             </ul>
-            <ul className="mobile__menu--header__links">
-              <NavLink className="mobile__menu--header__link" to={"/signup"}>
-                Sign Up
-              </NavLink>
 
-              <NavLink className="mobile__menu--header__link" to={"/login"}>
-                Sign In
-              </NavLink>
-            </ul>
+            {user ? (
+              <ul className="mobile__menu--header__links">
+                <li>
+                  <Link
+                    onClick={handleSignOut}
+                    className="mobile__menu--header__link"
+                    to={"/login"}
+                  >
+                    Sign Out <GoSignOut />
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul className="mobile__menu--header__links">
+                <li>
+                  <NavLink
+                    className="mobile__menu--header__link"
+                    to={"/signup"}
+                  >
+                    Sign Up
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="mobile__menu--header__link" to={"/login"}>
+                    Sign In
+                  </NavLink>
+                </li>
+              </ul>
+            )}
           </div>
         )}
         {/* mobile menu li end */}

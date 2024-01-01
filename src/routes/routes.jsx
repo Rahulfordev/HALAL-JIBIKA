@@ -8,6 +8,8 @@ import Favorite from "../pages/Favorite/Favorite";
 import SignIn from "../pages/SignIn/SignIn";
 import Signup from "../pages/SignUp/SignUp";
 import JobDetails from "../pages/JobDetails/JobDetails";
+import NotFound from "../pages/NotFound/NotFound";
+import PrivateRoute from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
   {
@@ -20,12 +22,16 @@ const routes = createBrowserRouter([
       },
       {
         path: "/jobs",
-        element: <Jobs />,
+        element: (
+          <PrivateRoute>
+            <Jobs />
+          </PrivateRoute>
+        ),
       },
       {
         path: `/jobdetails/:id`,
         element: <JobDetails />,
-        loader: () => fetch("../data/jobs/job.json"),
+        loader: () => fetch("/public/job.json"),
       },
       {
         path: "/about",
@@ -48,6 +54,10 @@ const routes = createBrowserRouter([
         element: <SignIn />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

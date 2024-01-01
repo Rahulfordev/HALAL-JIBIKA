@@ -4,11 +4,44 @@ import { TbEye } from "react-icons/tb";
 import Container from "../../components/common/Container";
 import "./SignUp.css";
 import { SignInDefault } from "../../components/common";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 const Signup = () => {
-  const { user, signInWithGoogle } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
+  const { user, createUser, signInWithGoogle } = useContext(AuthContext);
   console.log(user);
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.fullname.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirmPassword.value;
+    console.log(name, email, password, confirm);
+
+    setError("");
+    if (password !== confirm) {
+      setError("Your password did not match");
+      return;
+    } else if (password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
+
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
@@ -26,10 +59,10 @@ const Signup = () => {
           <h3 className="account-title">
             Sign up to <span>HALAL JIBIKA</span>
           </h3>
-          <form className="registration-form">
+          <form className="registration-form" onSubmit={handleSignUp}>
             <div className="form-group">
               <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" required="" />
+              <input type="text" id="name" name="fullname" required="" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email:</label>
@@ -66,6 +99,7 @@ const Signup = () => {
               Have an account already? <Link to={"/login"}>Log in</Link>
             </p>
           </div>
+          <p className="text-error">{error}</p>
         </div>
       </Container>
     </div>

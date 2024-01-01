@@ -75,3 +75,8 @@ button {
   transform: translateY(-50%);
   cursor: pointer;
 }
+
+.text-error {
+  color: rgb(235, 65, 65);
+  text-align: center;
+}
