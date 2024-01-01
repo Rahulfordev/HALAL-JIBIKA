@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
-import { CiStar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 
 import "./LatestJob.css";
-const LatestJob = ({ jobs }) => {
-  const { postDate, expireDate, salary, location, position, logo, tag } = jobs;
+const LatestJob = ({ job }) => {
+  const { postDate, expireDate, salary, location, position, logo, tag } = job;
 
   let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
@@ -53,19 +52,84 @@ const LatestJob = ({ jobs }) => {
         <div className="job__tag">{tagMap}</div>
         <div className="job__rate">
           <span className="job__rate--icon">
-            <CiStar />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-class fill-class one"
+            >
+              <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 21l2.3-7-6-4.6h7.6L12 2z" />
+            </svg>
           </span>
           <span className="job__rate--icon">
-            <CiStar />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-class fill-class one"
+            >
+              <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 21l2.3-7-6-4.6h7.6L12 2z" />
+            </svg>
           </span>
           <span className="job__rate--icon">
-            <CiStar />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-class fill-class one"
+            >
+              <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 21l2.3-7-6-4.6h7.6L12 2z" />
+            </svg>
           </span>
           <span className="job__rate--icon">
-            <CiStar />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-class fill-class"
+            >
+              <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 21l2.3-7-6-4.6h7.6L12 2z" />
+            </svg>
           </span>
           <span className="job__rate--icon">
-            <CiStar />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-class fill-class"
+            >
+              <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 21l2.3-7-6-4.6h7.6L12 2z" />
+            </svg>
           </span>
         </div>
       </div>

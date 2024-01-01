@@ -7,6 +7,7 @@ import Contact from "../pages/Contact/Contact";
 import Favorite from "../pages/Favorite/Favorite";
 import SignIn from "../pages/SignIn/SignIn";
 import Signup from "../pages/SignUp/SignUp";
+import JobDetails from "../pages/JobDetails/JobDetails";
 
 const routes = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: `/jobdetails/:id`,
+        element: <JobDetails />,
+        loader: () => fetch("../data/jobs/job.json"),
       },
       {
         path: "/about",

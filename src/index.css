@@ -17,6 +17,12 @@ html {
   background: #fff;
 }
 
+::selection {
+  background: #14a077;
+  color: #ffffff;
+  text-shadow: none;
+}
+
 :root {
   --primary-color: #121212;
   --parimary-secondary: #fff;

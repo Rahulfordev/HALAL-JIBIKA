@@ -36,56 +36,56 @@ const Footer = () => {
               </ul>
             </div>
             <div className="footer-item">
-              <h4>get help</h4>
+              <h4>For Clients</h4>
               <ul>
                 <li>
-                  <a href="#">FAQ</a>
+                  <a href="#">Talent Marketplace</a>
                 </li>
                 <li>
-                  <a href="#">shipping</a>
+                  <a href="#">Payroll Services</a>
                 </li>
                 <li>
-                  <a href="#">returns</a>
+                  <a href="#">Direct Contracts</a>
                 </li>
                 <li>
-                  <a href="#">order status</a>
+                  <a href="#">Hire Worldwide</a>
                 </li>
                 <li>
-                  <a href="#">payment options</a>
+                  <a href="#">Hire in the USA</a>
                 </li>
               </ul>
             </div>
             <div className="footer-item">
-              <h4>online shop</h4>
+              <h4>Our Resources</h4>
               <ul>
                 <li>
-                  <a href="#">watch</a>
+                  <a href="#">Free Business tools</a>
                 </li>
                 <li>
-                  <a href="#">bag</a>
+                  <a href="#">Affiliate Program</a>
                 </li>
                 <li>
-                  <a href="#">shoes</a>
+                  <a href="#">Success Stories</a>
                 </li>
                 <li>
-                  <a href="#">dress</a>
+                  <a href="#">Upwork Reviews</a>
                 </li>
               </ul>
             </div>
             <div className="footer-item">
-              <h4>online shop</h4>
+              <h4>Trending job</h4>
               <ul>
                 <li>
-                  <a href="#">watch</a>
+                  <a href="#">Browse Jobs</a>
                 </li>
                 <li>
-                  <a href="#">bag</a>
+                  <a href="#">Browse Categories</a>
                 </li>
                 <li>
-                  <a href="#">shoes</a>
+                  <a href="#">Submit Resume</a>
                 </li>
                 <li>
-                  <a href="#">dress</a>
+                  <a href="#">Job Alerts</a>
                 </li>
               </ul>
             </div>

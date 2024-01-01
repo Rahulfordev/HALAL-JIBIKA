@@ -19,7 +19,7 @@
 
 .home__job--favorite {
   border-radius: 50%;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--hover-color);
   height: 40px;
   width: 40px;
   display: flex;
@@ -55,6 +55,18 @@
   padding-bottom: 15px;
 }
 
+.stroke-class {
+  stroke: #ffd700;
+}
+
+.one {
+  fill: #ffd700 !important;
+}
+
+.fill-class {
+  fill: #fff;
+}
+
 .home__job--ts {
   display: flex;
   justify-content: space-between;
@@ -70,12 +82,6 @@
 .job__rate {
   display: flex;
   align-items: center;
-}
-
-.job__rate--icon svg {
-  color: #ffb700;
-  height: 1.3rem;
-  width: 1.3rem;
 }
 
 .home__job--se {
@@ -144,10 +150,11 @@
   }
 
   .home__job--position {
-    font-size: 12px;
+    font-size: 14px;
+    padding: 0px;
   }
 
   .home__job--location {
-    font-size: 10px;
+    font-size: 13px;
   }
 }

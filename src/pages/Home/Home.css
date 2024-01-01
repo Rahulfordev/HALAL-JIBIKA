@@ -11,19 +11,3 @@
     background-color: var(--hover-color);
   }
 }
-
-.home__jobs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1rem;
-}
-
-@media screen and (max-width: 600px) {
-  .home__jobs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-    gap: 1rem;
-    margin: 0 6px;
-    justify-content: center;
-  }
-}
