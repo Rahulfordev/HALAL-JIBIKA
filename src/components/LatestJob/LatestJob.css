@@ -34,7 +34,7 @@
   transition: all 0.3s;
 }
 
-.home__job--favorite:hover .svgimage {
+.svgimageRed {
   fill: red;
   stroke: none;
 }
@@ -78,8 +78,8 @@
   display: flex;
   align-items: center;
 }
-
-.home__job--se {
+.home__job--se,
+.home__job--more {
   display: flex;
   justify-content: space-between;
   padding: 16px 0 0px 0;

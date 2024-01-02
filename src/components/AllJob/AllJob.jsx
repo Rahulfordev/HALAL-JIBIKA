@@ -3,13 +3,13 @@ import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
-
-import "./LatestJob.css";
 import { Link } from "react-router-dom";
-const LatestJob = ({ job }) => {
-  const [click, setClick] = useState(false);
-  const { id, postDate, expireDate, salary, location, position, logo, tag } =
+
+const AllJob = ({ job }) => {
+  console.log(job.postDate);
+  const { id, postDate, logo, position, tag, salary, expireDate, location } =
     job;
+  const [click, setClick] = useState(false);
 
   let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
@@ -159,4 +159,4 @@ const LatestJob = ({ job }) => {
   );
 };
 
-export default LatestJob;
+export default AllJob;

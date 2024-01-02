@@ -6,6 +6,21 @@
     "companyName": "Apple Inc.",
     "position": "Software Engineering Intern",
     "description": "Exciting opportunity to intern at Apple in software engineering.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Computer Science, Software Engineering, or a related field is often required. Some positions may accept equivalent work experience in lieu of a degree.",
+        "ProgrammingSkills": "Proficiency in programming languages such as Java, Python, C++, or others relevant to the job's requirements.",
+        "ProblemSolvingAbilities": "Strong analytical and problem-solving skills to debug issues, optimize code, and create efficient solutions."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "CodeDevelopment": "Design, develop, and maintain high-quality, scalable, and efficient codebase according to specifications.",
+        "Collaboration": " Work closely with cross-functional teams (designers, product managers, etc.) to understand requirements and implement solutions.",
+        "Documentation": "Create and maintain technical documentation, including specifications, system architecture, and user manuals.",
+        "TestingDebugging": "Testing and Debugging: Write and conduct tests, troubleshoot issues, and debug code to ensure optimal "
+      }
+    ],
     "location": "San Francisco, CA 94102, USA",
     "tag": ["Full-time", "On-site"],
     "postDate": "1 day ago",
@@ -19,6 +34,21 @@
     "companyName": "Microsoft Corporation",
     "position": "Data Science Intern",
     "description": "Join Microsoft as a data science intern and work on innovative projects.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Computer Science, Software Engineering, or a related field is often required. Some positions may accept equivalent work experience in lieu of a degree.",
+        "ProgrammingSkills": "Proficiency in programming languages such as Java, Python, C++, or others relevant to the job's requirements.",
+        "ProblemSolvingAbilities": "Strong analytical and problem-solving skills to debug issues, optimize code, and create efficient solutions."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "CodeDevelopment": "Design, develop, and maintain high-quality, scalable, and efficient codebase according to specifications.",
+        "Collaboration": " Work closely with cross-functional teams (designers, product managers, etc.) to understand requirements and implement solutions.",
+        "Documentation": "Create and maintain technical documentation, including specifications, system architecture, and user manuals.",
+        "TestingDebugging": "Testing and Debugging: Write and conduct tests, troubleshoot issues, and debug code to ensure optimal "
+      }
+    ],
     "location": "Seattle, WA 98104, USA",
     "tag": ["Full-time", "Remote"],
     "postDate": "3 days ago",
@@ -32,6 +62,25 @@
     "companyName": "Amazon.com, Inc.",
     "position": "UX Design Intern",
     "description": "Internship opportunity at Amazon focusing on user experience design.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Graphic Design, Interaction Design, Human-Computer Interaction, or a related field is often required. However, equivalent experience and a strong portfolio showcasing design skills may be considered.",
+        "DesignSkills": "Proficiency in design tools such as Adobe XD, Sketch, Figma, or similar software. Strong understanding of typography, color theory, and layout principles.",
+        "UserResearch": "Experience in conducting user research, including user interviews, surveys, and usability testing to gather insights and inform design decisions.",
+        "Prototyping": "Ability to create interactive prototypes using tools like InVision, Proto.io, or Axure to visualize and iterate on design concepts.",
+        "UnderstandingUserNeeds": "Deep understanding of user-centered design principles, empathy for users, and the ability to translate user needs into intuitive and visually appealing interfaces."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "UIUXDesign": "Create visually engaging and user-friendly interfaces that align with project goals and user needs, ensuring consistency across all elements.",
+        "Collaboration": "Collaborate with stakeholders, including developers, product managers, and other designers, to translate requirements into innovative design solutions.",
+        "PrototypingTesting": "Build interactive prototypes to test and iterate on design concepts, conducting usability testing to validate design decisions and refine user experience.",
+        "Documentation": "Prepare and maintain design documentation, including wireframes, mockups, style guides, and design specifications for developers.",
+        "StayUpdated": "Stay updated on industry trends, best practices, and emerging technologies in UI/UX design to incorporate fresh ideas into projects."
+      }
+    ],
+
     "location": "New York, NY 10001, USA",
     "tag": ["Part-time", "On-site"],
     "postDate": "5 days ago",
@@ -45,6 +94,26 @@
     "companyName": "Meta Platforms, Inc. (formerly Facebook)",
     "position": "Marketing Intern",
     "description": "Explore marketing initiatives at Meta (formerly Facebook) as an intern.",
+    "Requirements": [
+      {
+        "Education": "A bachelor’s or master’s degree in Marketing, Business Administration, Communications, or a related field is often required. Relevant certifications or equivalent experience may be considered.",
+        "AnalyticalSkills": "Proficiency in data analysis, market research, and interpreting trends to drive marketing strategies and decisions.",
+        "Creativity": "Ability to think creatively, develop innovative campaigns, and create engaging content across various marketing channels.",
+        "CommunicationSkills": "Strong verbal and written communication skills to convey marketing messages effectively to diverse audiences.",
+        "DigitalMarketingKnowledge": "Familiarity with digital marketing tools, SEO/SEM, social media platforms, email marketing, and analytics tools.",
+        "Adaptability": "Capability to adapt to evolving market trends, consumer behaviors, and technological advancements in the marketing landscape."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "StrategyDevelopment": "Develop and execute comprehensive marketing strategies aligned with business goals, target audience, and market trends.",
+        "CampaignManagement": "Plan, implement, and manage marketing campaigns across various channels to increase brand awareness, lead generation, and customer acquisition.",
+        "ContentCreation": "Create compelling and relevant content including copywriting, visuals, and multimedia materials for marketing collateral and campaigns.",
+        "AnalyticsMonitoring": "Monitor and analyze marketing performance metrics, conduct market research, and derive actionable insights to optimize strategies.",
+        "Collaboration": "Collaborate with cross-functional teams including sales, product, and design to ensure consistency and alignment in marketing efforts.",
+        "Budgeting": "Manage marketing budgets effectively, allocate resources efficiently, and ensure cost-effective campaign execution."
+      }
+    ],
     "location": "Menlo Park, CA 94025, USA",
     "tag": ["Full-time", "Remote"],
     "postDate": "6 days ago",
@@ -58,6 +127,27 @@
     "companyName": "Netflix, Inc.",
     "position": "Content Development Intern",
     "description": "Join Netflix in creating innovative content as a development intern.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in English, Journalism, Communications, or a related field. Relevant certifications or equivalent experience may be considered.",
+        "WritingSkills": "Exceptional writing and editing skills with a strong command of grammar, style, and tone.",
+        "ResearchAbilities": "Proficiency in conducting thorough research on various topics and industries to produce accurate and engaging content.",
+        "SEOKnowledge": "Familiarity with SEO principles and best practices to optimize content for search engines.",
+        "Adaptability": "Ability to adapt writing style and tone to suit different audiences, platforms, and content types.",
+        "Creativity": "Creative thinking to generate original ideas, concepts, and engaging content across different formats.",
+        "AttentionToDetail": "Meticulous attention to detail to ensure accuracy and consistency in content creation."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "ContentCreation": "Develop and produce high-quality written content for various platforms, including articles, blog posts, social media, and website content.",
+        "ResearchCollaboration": "Collaborate with subject matter experts and stakeholders to gather information, conduct research, and validate content accuracy.",
+        "ContentStrategy": "Contribute to content strategy development, including content calendars, topic ideation, and content distribution plans.",
+        "SEOImplementation": "Implement SEO best practices, including keyword research and optimization, to enhance content visibility and reach.",
+        "EditingProofreading": "Edit and proofread content to ensure clarity, accuracy, and adherence to style guidelines.",
+        "ContentPerformanceAnalysis": "Analyze content performance metrics and user engagement data to refine content strategies and improve audience reach."
+      }
+    ],
     "location": "Los Angeles, CA 90001, USA",
     "tag": ["Full-time", "On-site"],
     "postDate": "4 days ago",
@@ -84,6 +174,23 @@
     "companyName": "IBM Corporation",
     "position": "Cybersecurity Intern",
     "description": "Work on cybersecurity projects at IBM as an intern.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Cybersecurity, Computer Science, Information Technology, or a related field. Consideration may be given to equivalent work experience or industry certifications (CISSP, CISM, etc.).",
+        "TechnicalSkills": "Thorough understanding of cybersecurity principles, protocols, and practices. Proficiency in security technologies including firewalls, IDS/IPS, and encryption methods. Experience with vulnerability assessment tools and security auditing.",
+        "SoftSkills": "Strong analytical abilities to assess security risks and troubleshoot issues. Effective communication skills to convey complex security concepts. Ability to adapt to dynamic cybersecurity landscapes."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "SecurityStrategy": "Develop and implement robust cybersecurity strategies to protect organizational assets.",
+        "RiskAssessment": "Conduct routine risk assessments and security audits to identify vulnerabilities and recommend mitigation tactics.",
+        "IncidentResponse": "Lead incident response efforts, perform forensic analysis, and guide remediation actions in the event of security incidents.",
+        "TrainingAndAwareness": "Provide guidance and training to staff on cybersecurity best practices and promote a culture of security awareness.",
+        "ComplianceManagement": "Ensure adherence to relevant regulatory standards and industry best practices.",
+        "ContinuousImprovement": "Stay updated on emerging threats and technologies to enhance existing security measures."
+      }
+    ],
     "location": "Austin, TX 78701, USA",
     "tag": ["Part-time", "Remote"],
     "postDate": "7 days ago",
@@ -97,6 +204,24 @@
     "companyName": "Twitter, Inc.",
     "position": "Product Management Intern",
     "description": "Internship at Twitter focusing on product management.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Business Administration, Computer Science, Engineering, or a related field. Relevant certifications in product management could be advantageous.",
+        "AnalyticalSkills": "Strong analytical abilities to assess market trends, user feedback, and data to make informed product decisions.",
+        "CommunicationSkills": "Excellent communication skills to collaborate with cross-functional teams, articulate product vision, and create compelling presentations.",
+        "ProblemSolvingAbilities": "Effective problem-solving skills to identify user needs, prioritize features, and navigate trade-offs."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "ProductStrategy": "Develop and execute a comprehensive product strategy aligned with business objectives and market demands.",
+        "RequirementGathering": "Collaborate with stakeholders to gather, prioritize, and document product requirements.",
+        "RoadmapPlanning": "Create and maintain product roadmaps, defining feature sets and timelines.",
+        "CrossFunctionalCollaboration": "Work closely with design, engineering, and marketing teams to ensure successful product delivery.",
+        "ProductLaunch": "Coordinate product launches, including planning, marketing strategies, and user adoption plans.",
+        "PerformanceAnalysis": "Monitor product performance, gather user feedback, and iterate on features to improve user experience and product success."
+      }
+    ],
     "location": "San Francisco, CA 94103, USA",
     "tag": ["Full-time", "On-site"],
     "postDate": "5 days ago",
@@ -106,10 +231,28 @@
   {
     "id": 9,
     "title": "Uber Business Analytics Internship",
-    "logo": "https://picsum.photos/200",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg",
     "companyName": "Uber Technologies, Inc.",
     "position": "Business Analytics Intern",
     "description": "Join Uber as a business analytics intern and analyze market trends.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Business Administration, Economics, Statistics, Mathematics, Computer Science, or a related field. Additional certifications in analytics tools (e.g., Tableau, Power BI) can be beneficial.",
+        "AnalyticalSkills": "Strong quantitative and qualitative analytical abilities to interpret data, identify trends, and derive actionable insights.",
+        "TechnicalSkills": "Proficiency in statistical analysis tools (like R, Python, or SAS) and data visualization tools (such as Tableau or Power BI).",
+        "ProblemSolvingAbilities": "Effective problem-solving skills to address business challenges through data-driven solutions."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "DataAnalysis": "Analyze large datasets to extract meaningful patterns, trends, and insights to aid business decision-making.",
+        "Reporting": "Generate regular reports and dashboards to communicate insights to stakeholders in a clear and understandable manner.",
+        "PredictiveModeling": "Develop predictive models and algorithms to forecast trends and outcomes, aiding in strategic planning.",
+        "BusinessStrategySupport": "Provide analytical support for strategic business initiatives, offering insights and recommendations.",
+        "DataQualityMaintenance": "Ensure data integrity, cleanliness, and accuracy through regular audits and data cleansing processes.",
+        "ContinuousImprovement": "Explore and implement new analytical techniques and technologies to enhance data analysis capabilities."
+      }
+    ],
     "location": "Chicago, IL 60601, USA",
     "tag": ["Full-time", "Remote"],
     "postDate": "3 days ago",
@@ -119,10 +262,25 @@
   {
     "id": 10,
     "title": "Salesforce Software Development Internship",
-    "logo": "https://picsum.photos/200",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
     "companyName": "Salesforce.com, Inc.",
     "position": "Software Development Intern",
     "description": "Internship opportunity in software development at Salesforce.",
+    "Requirements": [
+      {
+        "Education": "A bachelor's or master's degree in Computer Science, Software Engineering, or a related field. Equivalent work experience or relevant certifications can be considered.",
+        "ProgrammingSkills": "Proficiency in programming languages such as Java, Python, C++, or others relevant to the job's requirements.",
+        "ProblemSolvingAbilities": "Strong analytical and problem-solving skills to debug issues, optimize code, and create efficient solutions."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "CodeDevelopment": "Design, develop, and maintain high-quality, scalable, and efficient codebase according to specifications.",
+        "Collaboration": "Work closely with cross-functional teams (designers, product managers, etc.) to understand requirements and implement solutions.",
+        "Documentation": "Create and maintain technical documentation, including specifications, system architecture, and user manuals.",
+        "TestingDebugging": "Write and conduct tests, troubleshoot issues, and debug code to ensure optimal functionality."
+      }
+    ],
     "location": "San Jose, CA 95113, USA",
     "tag": ["Full-time", "On-site"],
     "postDate": "6 days ago",

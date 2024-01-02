@@ -13,3 +13,13 @@
     justify-content: center;
   }
 }
+
+.add__new {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.add__new--job:hover {
+  background-color: var(--hover-color);
+  color: var(--parimary-secondary);
+}

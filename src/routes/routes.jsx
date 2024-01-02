@@ -9,6 +9,7 @@ import SignIn from "../pages/SignIn/SignIn";
 import Signup from "../pages/SignUp/SignUp";
 import JobDetails from "../pages/JobDetails/JobDetails";
 import NotFound from "../pages/NotFound/NotFound";
+import AddJob from "../pages/CRUD/AddJob/AddJob";
 // import PrivateRoute from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
@@ -27,7 +28,7 @@ const routes = createBrowserRouter([
       {
         path: `/jobdetails/:id`,
         element: <JobDetails />,
-        loader: () => fetch("/public/job.json"),
+        loader: () => fetch("http://localhost:9000/jobs"),
       },
       {
         path: "/about",
@@ -48,6 +49,10 @@ const routes = createBrowserRouter([
       {
         path: "/login",
         element: <SignIn />,
+      },
+      {
+        path: "/post-a-job",
+        element: <AddJob />,
       },
     ],
   },

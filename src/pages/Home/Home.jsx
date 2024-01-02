@@ -3,16 +3,23 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import Title from "../../components/common/Title";
-import Jobs from "../Jobs/Jobs";
+import useFetch from "../../Hooks/useFetch";
+import LatestJob from "../../components/LatestJob/LatestJob";
+import Loading from "../../components/Loading/Loading";
 
 const Home = () => {
+  const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+  const mapData = data
+    .slice(0, 6)
+    .map((job) => <LatestJob key={job.id} job={job} />);
+    
   return (
     <div className="home-section">
       <Container>
         <Banner />
         <div>
           <Title />
-          <Jobs clice={6} />
+          <div className="home__jobs">{isLoading ? <Loading /> : mapData}</div>
         </div>
         <div className="home__explore--all">
           <Link to="/jobs" className="explore-button button">
