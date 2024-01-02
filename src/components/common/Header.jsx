@@ -101,7 +101,7 @@ export const Header = () => {
           {user ? (
             <ul className="header__links users">
               <li>
-                <Link className="header__link" to={"/signup"}>
+                <Link className="header__link">
                   <img
                     src={user?.photoURL ? user?.photoURL : defaultUser}
                     alt=""
@@ -110,11 +110,7 @@ export const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  onClick={handleSignOut}
-                  className="header__link"
-                  to={"/login"}
-                >
+                <Link onClick={handleSignOut} className="header__link">
                   Sign Out <GoSignOut />
                 </Link>
               </li>
@@ -170,7 +166,6 @@ export const Header = () => {
                   <Link
                     onClick={handleSignOut}
                     className="mobile__menu--header__link"
-                    to={"/login"}
                   >
                     Sign Out <GoSignOut />
                   </Link>

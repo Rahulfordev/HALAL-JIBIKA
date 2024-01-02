@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 
 const AllJob = ({ job }) => {
   console.log(job.postDate);
-  const { id, postDate, logo, position, tag, salary, expireDate, location } =
-    job;
+  const { id, postDate, logo, position, salary, expireDate, location } = job;
   const [click, setClick] = useState(false);
 
-  let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
+  let tag = ["Full-time", "Remote"];
+
+  let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
   return (
     <div>
@@ -28,7 +29,7 @@ const AllJob = ({ job }) => {
                   <CiLocationOn /> {location}
                 </p>
                 <p className="home__job--postDate">
-                  <CiCalendar /> {postDate}
+                  <CiCalendar /> {postDate} days ago
                 </p>
               </div>
             </div>
@@ -147,7 +148,7 @@ const AllJob = ({ job }) => {
           </div>
           <div className="home__job--ex--sa">
             <p className="home__job-sub">
-              <CiCalendar /> {expireDate}
+              <CiCalendar /> {expireDate} days left to apply
             </p>
           </div>
         </div>

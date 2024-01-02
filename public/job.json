@@ -23,9 +23,9 @@
     ],
     "location": "San Francisco, CA 94102, USA",
     "tag": ["Full-time", "On-site"],
-    "postDate": "1 day ago",
+    "postDate": "2 ",
     "salary": "$85,000 - $115,000",
-    "expireDate": "18 days left to apply"
+    "expireDate": "18"
   },
   {
     "id": 2,
@@ -51,9 +51,9 @@
     ],
     "location": "Seattle, WA 98104, USA",
     "tag": ["Full-time", "Remote"],
-    "postDate": "3 days ago",
+    "postDate": "3 ",
     "salary": "$80,000 - $105,000",
-    "expireDate": "20 days left to apply"
+    "expireDate": "20 "
   },
   {
     "id": 3,
@@ -83,9 +83,9 @@
 
     "location": "New York, NY 10001, USA",
     "tag": ["Part-time", "On-site"],
-    "postDate": "5 days ago",
+    "postDate": "5 ",
     "salary": "$75,000 - $95,000",
-    "expireDate": "15 days left to apply"
+    "expireDate": "15 "
   },
   {
     "id": 4,
@@ -116,9 +116,9 @@
     ],
     "location": "Menlo Park, CA 94025, USA",
     "tag": ["Full-time", "Remote"],
-    "postDate": "6 days ago",
+    "postDate": "6 ",
     "salary": "$78,000 - $100,000",
-    "expireDate": "16 days left to apply"
+    "expireDate": "16 "
   },
   {
     "id": 5,
@@ -150,9 +150,9 @@
     ],
     "location": "Los Angeles, CA 90001, USA",
     "tag": ["Full-time", "On-site"],
-    "postDate": "4 days ago",
+    "postDate": "4 ",
     "salary": "$82,000 - $110,000",
-    "expireDate": "19 days left to apply"
+    "expireDate": "19 "
   },
   {
     "id": 6,
@@ -163,9 +163,9 @@
     "description": "Internship opportunity at Tesla in the field of engineering.",
     "location": "Palo Alto, CA 94304, USA",
     "tag": ["Full-time", "On-site"],
-    "postDate": "2 days ago",
+    "postDate": "2 ",
     "salary": "$80,000 - $105,000",
-    "expireDate": "21 days left to apply"
+    "expireDate": "21 "
   },
   {
     "id": 7,
@@ -193,9 +193,9 @@
     ],
     "location": "Austin, TX 78701, USA",
     "tag": ["Part-time", "Remote"],
-    "postDate": "7 days ago",
+    "postDate": "7 ",
     "salary": "$76,000 - $98,000",
-    "expireDate": "14 days left to apply"
+    "expireDate": "14 "
   },
   {
     "id": 8,
@@ -224,9 +224,9 @@
     ],
     "location": "San Francisco, CA 94103, USA",
     "tag": ["Full-time", "On-site"],
-    "postDate": "5 days ago",
+    "postDate": "5 ",
     "salary": "$79,000 - $102,000",
-    "expireDate": "17 days left to apply"
+    "expireDate": "17 "
   },
   {
     "id": 9,
@@ -255,9 +255,9 @@
     ],
     "location": "Chicago, IL 60601, USA",
     "tag": ["Full-time", "Remote"],
-    "postDate": "3 days ago",
+    "postDate": "3 ",
     "salary": "$77,000 - $100,000",
-    "expireDate": "23 days left to apply"
+    "expireDate": "23 "
   },
   {
     "id": 10,
@@ -283,8 +283,8 @@
     ],
     "location": "San Jose, CA 95113, USA",
     "tag": ["Full-time", "On-site"],
-    "postDate": "6 days ago",
+    "postDate": "6 ",
     "salary": "$81,000 - $108,000",
-    "expireDate": "16 days left to apply"
+    "expireDate": "16 "
   }
 ]

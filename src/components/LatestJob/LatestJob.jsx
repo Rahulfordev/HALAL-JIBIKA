@@ -28,7 +28,7 @@ const LatestJob = ({ job }) => {
                   <CiLocationOn /> {location}
                 </p>
                 <p className="home__job--postDate">
-                  <CiCalendar /> {postDate}
+                  <CiCalendar /> {postDate} days ago
                 </p>
               </div>
             </div>
@@ -147,7 +147,7 @@ const LatestJob = ({ job }) => {
           </div>
           <div className="home__job--ex--sa">
             <p className="home__job-sub">
-              <CiCalendar /> {expireDate}
+              <CiCalendar /> {expireDate} days left to apply
             </p>
           </div>
         </div>

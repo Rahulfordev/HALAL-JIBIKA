@@ -9,6 +9,7 @@ const AddJob = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
+
     setJobData({
       ...jobData,
       [name]: value,
@@ -25,14 +26,14 @@ const AddJob = () => {
     salary: "",
     postDate: "",
     expireDate: "",
-    tag: "",
+    tag: [],
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log(jobData);
-    
+
     axios.post(baseURL, jobData).then((response) => {
       setJobData(response.data);
     });
@@ -126,7 +127,7 @@ const AddJob = () => {
               <div className="post__form--group">
                 <label htmlFor="postDate">Job Post Date:</label>
                 <input
-                  type="date"
+                  type="number"
                   id="postDate"
                   name="postDate"
                   value={jobData.postDate}
@@ -136,7 +137,7 @@ const AddJob = () => {
               <div className="post__form--group">
                 <label htmlFor="expireDate">Job Expire Date:</label>
                 <input
-                  type="date"
+                  type="number"
                   id="expireDate"
                   name="expireDate"
                   value={jobData.expireDate}
