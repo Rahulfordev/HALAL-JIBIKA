@@ -9,7 +9,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 const Signup = () => {
   const [error, setError] = useState("");
 
-  const { user, createUser, signInWithGoogle } = useContext(AuthContext);
+  const { user, createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
   console.log(user);
 
   const handleSignUp = (event) => {
@@ -50,6 +50,21 @@ const Signup = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message);
+      });
+  };
+
+  const handleSignInWithGithub = () => {
+    signInWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        // toast("login Successfull");
+        // navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+        setError(error.message);
       });
   };
   return (
@@ -93,7 +108,7 @@ const Signup = () => {
               Sign Up
             </button>
           </form>
-          <SignInDefault handleSignInWithGoogle={handleSignInWithGoogle} />
+          <SignInDefault handleSignInWithGithub={handleSignInWithGithub} handleSignInWithGoogle={handleSignInWithGoogle} />
           <div className="go__signup">
             <p>
               Have an account already? <Link to={"/login"}>Log in</Link>

@@ -2,7 +2,10 @@
 import { Link } from "react-router-dom";
 import "./SignInDefault.css";
 
-export const SignInDefault = ({ handleSignInWithGoogle }) => {
+export const SignInDefault = ({
+  handleSignInWithGoogle,
+  handleSignInWithGithub,
+}) => {
   return (
     <>
       <div className="signIn__default">
@@ -42,7 +45,10 @@ export const SignInDefault = ({ handleSignInWithGoogle }) => {
         </Link>
       </div>
       <div className="signIn__default">
-        <Link className="signIn__default--content">
+        <Link
+          onClick={handleSignInWithGithub}
+          className="signIn__default--content"
+        >
           <div className="signIn__default--icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaRegUserCircle } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { RxCross2 } from "react-icons/rx";
 
+import defaultUser from "../../assets/default__user.png";
 import "./Header.css";
 import Logo from "./Logo";
 import { useContext, useState } from "react";
@@ -59,7 +59,7 @@ export const Header = () => {
               {user?.email ? (
                 <li className="mobile__nav--user header__link">
                   <img
-                    src={user?.photoURL ? user?.photoURL : <FaRegUserCircle />}
+                    src={user?.photoURL ? user?.photoURL : defaultUser}
                     alt=""
                   />
                   <span>{user.displayName}</span>
@@ -103,7 +103,7 @@ export const Header = () => {
               <li>
                 <Link className="header__link" to={"/signup"}>
                   <img
-                    src={user?.photoURL ? user?.photoURL : <FaRegUserCircle />}
+                    src={user?.photoURL ? user?.photoURL : defaultUser}
                     alt=""
                   />
                   {user.displayName}

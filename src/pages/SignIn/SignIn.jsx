@@ -3,11 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../../components/common/Container";
 import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const SignIn = () => {
-  const { user, signIn, signInWithGoogle } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
+  const { user, signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   console.log(user);
 
   const navigate = useNavigate();
@@ -24,6 +27,8 @@ const SignIn = () => {
     const password = form.password.value;
     console.log(email, password);
 
+    setError("");
+
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -33,6 +38,7 @@ const SignIn = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -44,6 +50,21 @@ const SignIn = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message);
+      });
+  };
+
+  const handleSignInWithGithub = () => {
+    signInWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        // toast("login Successfull");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+        setError(error.message);
       });
   };
   return (
@@ -77,12 +98,16 @@ const SignIn = () => {
           <div className="forgot__password">
             <Link className="forgot__password--button">Forgot password?</Link>
           </div>
-          <SignInDefault handleSignInWithGoogle={handleSignInWithGoogle} />
+          <SignInDefault
+            handleSignInWithGithub={handleSignInWithGithub}
+            handleSignInWithGoogle={handleSignInWithGoogle}
+          />
           <div className="go__signup">
             <p>
               Don't have an account? <Link to={"/signup"}>Sign up</Link>
             </p>
           </div>
+          <p className="text-error">{error}</p>
         </div>
       </Container>
     </div>

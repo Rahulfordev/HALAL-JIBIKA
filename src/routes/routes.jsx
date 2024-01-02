@@ -9,7 +9,7 @@ import SignIn from "../pages/SignIn/SignIn";
 import Signup from "../pages/SignUp/SignUp";
 import JobDetails from "../pages/JobDetails/JobDetails";
 import NotFound from "../pages/NotFound/NotFound";
-import PrivateRoute from "./PrivateRoutes";
+// import PrivateRoute from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
   {
@@ -22,11 +22,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/jobs",
-        element: (
-          <PrivateRoute>
-            <Jobs />
-          </PrivateRoute>
-        ),
+        element: <Jobs />,
       },
       {
         path: `/jobdetails/:id`,
