@@ -1,26 +1,23 @@
 /* eslint-disable react/prop-types */
+
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
-
-import "./LatestJob.css";
-import { Link } from "react-router-dom";
-const LatestJob = ({ job }) => {
+const FavoriteJob = ({ favorite }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
-
     axios.put(`http://localhost:9000/jobs/${job.id}`, {
       ...job,
       isTrue: status,
     });
   };
 
-  const { id, postDate, expireDate, salary, location, position, logo, tag } =
-    job;
+  const { postDate, logo, position, salary, expireDate, location } = favorite;
 
-  let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
+  let tag = ["Full-time", "Remote"];
 
+  let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
   return (
     <div>
       <div className="home__job--main">
@@ -41,10 +38,13 @@ const LatestJob = ({ job }) => {
               </div>
             </div>
           </div>
-          <div className="home__job--favorite" onClick={() => handleClick(job)}>
+          <div
+            className="home__job--favorite"
+            onClick={() => handleClick(favorite)}
+          >
             {/* <CiHeart /> */}
             <svg
-              className={`svgimage ${job.isTrue ? `svgimageRed` : null}`}
+              className={`svgimage ${favorite.isTrue ? `svgimageRed` : null}`}
               width="20px"
               id="Layer_1"
               data-name="Layer 1"
@@ -159,12 +159,9 @@ const LatestJob = ({ job }) => {
             </p>
           </div>
         </div>
-        <div className="home__job--more">
-          <Link to={`/jobdetails/${id}`}>Show Details</Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default LatestJob;
+export default FavoriteJob;

@@ -1,14 +1,22 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+import "./AllJob.css";
 
 const AllJob = ({ job }) => {
-  console.log(job.postDate);
+  const handleClick = (job) => {
+    const status = job.isTrue === "undefined" ? true : !job.isTrue;
+    axios.put(`http://localhost:9000/jobs/${job.id}`, {
+      ...job,
+      isTrue: status,
+    });
+  };
+
   const { id, postDate, logo, position, salary, expireDate, location } = job;
-  const [click, setClick] = useState(false);
 
   let tag = ["Full-time", "Remote"];
 
@@ -34,10 +42,10 @@ const AllJob = ({ job }) => {
               </div>
             </div>
           </div>
-          <div className="home__job--favorite" onClick={() => setClick(!click)}>
+          <div className="home__job--favorite" onClick={() => handleClick(job)}>
             {/* <CiHeart /> */}
             <svg
-              className={`svgimage ${click ? `svgimageRed` : null}`}
+              className={`svgimage ${job.isTrue ? `svgimageRed` : null}`}
               width="20px"
               id="Layer_1"
               data-name="Layer 1"
@@ -152,8 +160,18 @@ const AllJob = ({ job }) => {
             </p>
           </div>
         </div>
-        <div className="home__job--more">
-          <Link to={`jobdetails/${id}`}>Show Details</Link>
+        <div className="home__job--buttons">
+          <div className="home__job--more">
+            <Link to={`/jobdetails/${id}`}>Show Details</Link>
+          </div>
+          <div className="home__job--button__user">
+            <div className="home__job--more">
+              <Link>Delete</Link>
+            </div>
+            <div className="home__job--more">
+              <Link>Edit</Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

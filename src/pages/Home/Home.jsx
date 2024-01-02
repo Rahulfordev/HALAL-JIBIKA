@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Container from "../../components/common/Container";
 import "./Home.css";
 import { Link } from "react-router-dom";

@@ -1,18 +1,14 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import JobDetailsShow from "../../components/JobDetailsShow/JobDetailsShow";
 import Container from "../../components/common/Container";
+import JobDetailsShow from "../../components/JobDetailsShow/JobDetailsShow";
 
 const JobDetails = () => {
-  const jobData = useLoaderData();
-
-  const { id } = useParams();
-  const parInt = parseInt(id);
-  const findId = jobData.find((jobId) => jobId.id === parInt);
+  const jobDetails = useLoaderData();
 
   return (
     <div>
       <Container>
-        <JobDetailsShow findId={findId} />
+        <JobDetailsShow jobDetails={jobDetails} />
       </Container>
     </div>
   );
