@@ -4,8 +4,7 @@ import axios from "axios";
 export default function useFetch(url) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [error, setError] = useState("");
-  const [stateDataUpdateing, setStateDataUpdateing] = useState(false);
+  const [error, setError] = useState(""); 
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +19,7 @@ export default function useFetch(url) {
       }
     };
     fetchData(url);
-  }, [url, stateDataUpdateing]);
+  }, [url]);
 
-  return { data, error, loading, setStateDataUpdateing };
+  return { data, error, loading, setData };
 }

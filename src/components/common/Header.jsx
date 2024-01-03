@@ -31,7 +31,7 @@ export const Header = () => {
   const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
 
   const isApplyedData = data.filter((trueData) => trueData.isApplyed === true);
-  // const isTrueData = data.filter((trueData) => trueData.isTrue === true);
+  const isTrueData = data.filter((trueData) => trueData.isTrue === true);
 
   // const headerEl = useRef();
   // if (typeof window !== `undefined`) {
@@ -104,7 +104,7 @@ export const Header = () => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favorite
+              Favoritev ({isTrueData.length})
             </NavLink>
             {isApplyedData.length > 0 ? (
               <NavLink className="header__link" to={"/applyed-job"}>

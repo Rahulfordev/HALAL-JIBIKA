@@ -7,7 +7,7 @@ import axios from "axios";
 
 import "./AllJob.css";
 
-const AllJob = ({ job }) => {
+const AllJob = ({ job, setData, data }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios.put(`http://localhost:9000/jobs/${job.id}`, {
@@ -22,9 +22,25 @@ const AllJob = ({ job }) => {
 
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
+  const handleDelete = (job) => {
+    axios
+      .delete(`http://localhost:9000/jobs/${job.id}`)
+      .then((response) => {
+        setData(data.filter((dat) => dat.id !== id));
+        console.log(`Deleted post with ID ${job.id}`);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div>
-      <div className="home__job--main">
+      <div
+        className="home__job--main"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
         <div className="home__job--data">
           <div className="home__job--info">
             <div>
@@ -166,7 +182,7 @@ const AllJob = ({ job }) => {
           </div>
           <div className="home__job--button__user">
             <div className="home__job--more">
-              <Link>Delete</Link>
+              <Link onClick={() => handleDelete(job)}>Delete</Link>
             </div>
             <div className="home__job--more">
               <Link>Edit</Link>

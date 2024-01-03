@@ -32,7 +32,7 @@ const About = () => {
               <p>Company</p>
             </div>
           </div>
-          <div className="home__banner--explore"> 
+          <div className="home__banner--explore">
             <Link className="button about__truested--button">100% Trust</Link>
           </div>
         </div>

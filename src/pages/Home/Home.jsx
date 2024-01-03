@@ -9,11 +9,15 @@ import LatestJob from "../../components/LatestJob/LatestJob";
 import Loading from "../../components/Loading/Loading";
 
 const Home = () => {
-  const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+  const { isError, isLoading, data, setData } = useFetch(
+    "http://localhost:9000/jobs"
+  );
   const mapData = data
     .slice(0, 6)
-    .map((job) => <LatestJob key={job.id} job={job} />);
-    
+    .map((job) => (
+      <LatestJob key={job.id} job={job} data={data} setData={setData} />
+    ));
+
   return (
     <div className="home-section">
       <Container>

@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="home__banner">
-      <div className="home__banner--headline">
+      <div
+        className="home__banner--headline"
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         <div className="home__banner--content">
           <h1 className="hero__banner--title">
             Find The Job That Fits <br /> <span>Your Life</span>
@@ -20,7 +25,7 @@ const Banner = () => {
           <Link className="button home__banner-button">Explore Now</Link>
         </div>
       </div>
-      <div className="home__banner--image">
+      <div className="home__banner--image" data-aos="fade-left">
         <img src={HeroImage} alt="hero--image" />
       </div>
     </div>
