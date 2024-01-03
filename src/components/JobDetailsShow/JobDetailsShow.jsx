@@ -6,6 +6,7 @@ import dollar from "../../assets/dollar.png";
 import { Link } from "react-router-dom";
 import "./JobDetailsShow.css";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const JobDetailsShow = ({ jobDetails }) => {
   const {
@@ -32,6 +33,10 @@ const JobDetailsShow = ({ jobDetails }) => {
       ...jobDetails,
       isApplyed: status,
     });
+
+    if (jobDetails.isApplyed === true) {
+      return toast.success("Signin successful!");
+    }
   };
 
   return (

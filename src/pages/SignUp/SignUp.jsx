@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TbEye } from "react-icons/tb";
 
 import Container from "../../components/common/Container";
@@ -6,11 +6,15 @@ import "./SignUp.css";
 import { SignInDefault } from "../../components/common";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { toast } from "react-toastify";
+
 const Signup = () => {
   const [error, setError] = useState("");
 
-  const { user, createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
-  console.log(user);
+  const { user, createUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+  // console.log(user);
+  const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -34,7 +38,9 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        toast.success("Signup successful!");
+        // console.log(loggedUser);
+        // navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -46,7 +52,9 @@ const Signup = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+        toast.success("Signin successful!");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -58,8 +66,9 @@ const Signup = () => {
     signInWithGithub()
       .then((result) => {
         console.log(result.user);
+        toast.success("Signin successful!");
         // toast("login Successfull");
-        // navigate("/");
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -108,7 +117,10 @@ const Signup = () => {
               Sign Up
             </button>
           </form>
-          <SignInDefault handleSignInWithGithub={handleSignInWithGithub} handleSignInWithGoogle={handleSignInWithGoogle} />
+          <SignInDefault
+            handleSignInWithGithub={handleSignInWithGithub}
+            handleSignInWithGoogle={handleSignInWithGoogle}
+          />
           <div className="go__signup">
             <p>
               Have an account already? <Link to={"/login"}>Log in</Link>

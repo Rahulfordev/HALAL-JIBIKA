@@ -4,8 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
-const FavoriteJob = ({ favorite }) => {
-  
+const FavoriteJob = ({ favorite, setStateDataUpdateing }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios.put(`http://localhost:9000/jobs/${job.id}`, {

@@ -1,0 +1,17 @@
+.about__section--jobs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.about__section--job h4 {
+  color: var(--hover-color);
+  font-size: 22px;
+}
+
+.about__truested--button {
+  background-color: var(--hover-color);
+  font-size: 25px;
+  color: var(--parimary-secondary);
+}

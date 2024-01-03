@@ -55,6 +55,7 @@ label {
 }
 
 .post__form--group > input[type="text"]:focus,
+.post__form--group > input[type="number"]:focus,
 .post__form--group > input[type="url"]:focus {
   outline: none;
   border-color: var(--hover-color);

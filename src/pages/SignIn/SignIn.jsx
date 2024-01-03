@@ -5,17 +5,18 @@ import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const [error, setError] = useState("");
 
   const { user, signIn, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   const from = location.state?.from?.pathname || "/";
 
@@ -25,16 +26,18 @@ const SignIn = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     setError("");
 
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        toast.success("Signin successful!");
+        // console.log(loggedUser);
         form.reset();
         navigate(from, { replace: true });
+        // navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -46,10 +49,12 @@ const SignIn = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        toast.success("Signin successful!");
+        // console.log(user);
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
         setError(error.message);
       });
   };
@@ -57,13 +62,13 @@ const SignIn = () => {
   const handleSignInWithGithub = () => {
     signInWithGithub()
       .then((result) => {
-        console.log(result.user);
-        // toast("login Successfull");
+        // console.log(result.user);
+        toast.success("Signin successful!");
         navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode);
+        // console.log(errorCode);
         setError(error.message);
       });
   };

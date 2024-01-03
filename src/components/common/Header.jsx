@@ -10,6 +10,7 @@ import Logo from "./Logo";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import useFetch from "../../Hooks/useFetch";
+import { toast } from "react-toastify";
 // import { useRef } from "react";
 
 export const Header = () => {
@@ -17,6 +18,7 @@ export const Header = () => {
   const handleSignOut = () => {
     logOut()
       .then((result) => {
+        toast.success("Signout successful!");
         const user = result.user;
         console.log(user);
       })
@@ -29,6 +31,7 @@ export const Header = () => {
   const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
 
   const isApplyedData = data.filter((trueData) => trueData.isApplyed === true);
+  // const isTrueData = data.filter((trueData) => trueData.isTrue === true);
 
   // const headerEl = useRef();
   // if (typeof window !== `undefined`) {
@@ -103,11 +106,13 @@ export const Header = () => {
             <NavLink className="header__link" to={"/favorite"}>
               Favorite
             </NavLink>
-            {isApplyedData.length >= 0 ? (
+            {isApplyedData.length > 0 ? (
               <NavLink className="header__link" to={"/applyed-job"}>
                 Applyed Job
               </NavLink>
-            ) : null}
+            ) : (
+              ""
+            )}
           </ul>
           {user ? (
             <ul className="header__links users">
