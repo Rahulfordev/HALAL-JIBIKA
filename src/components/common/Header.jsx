@@ -108,7 +108,7 @@ export const Header = () => {
             </NavLink>
             {isApplyedData.length > 0 ? (
               <NavLink className="header__link" to={"/applyed-job"}>
-                Applyed Job
+                Applyed Job ({isApplyedData.length})
               </NavLink>
             ) : (
               ""
