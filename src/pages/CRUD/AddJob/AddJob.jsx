@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Container from "../../../components/common/Container";
 import "./AddJob.css";
 import axios from "axios";
@@ -8,7 +8,6 @@ const AddJob = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
 
     setJobData({
       ...jobData,
@@ -31,8 +30,6 @@ const AddJob = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(jobData);
 
     axios.post(baseURL, jobData).then((response) => {
       setJobData(response.data);

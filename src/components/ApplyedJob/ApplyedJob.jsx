@@ -4,8 +4,23 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
-const FavoriteJob = ({ favorite }) => {
-  
+import { Link } from "react-router-dom";
+
+const ApplyedJob = ({ applyed }) => {
+  const { postDate, logo, position, salary, expireDate, location } = applyed;
+  let tag = ["Full-time", "Remote"];
+  let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
+
+  const handleApplied = (jobDetails) => {
+    const status =
+      jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
+    
+    axios.put(`http://localhost:9000/jobs/${jobDetails.id}`, {
+      ...jobDetails,
+      isApplyed: status,
+    });
+  };
+
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios.put(`http://localhost:9000/jobs/${job.id}`, {
@@ -14,11 +29,6 @@ const FavoriteJob = ({ favorite }) => {
     });
   };
 
-  const { postDate, logo, position, salary, expireDate, location } = favorite;
-
-  let tag = ["Full-time", "Remote"];
-
-  let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
   return (
     <div>
       <div className="home__job--main">
@@ -41,11 +51,11 @@ const FavoriteJob = ({ favorite }) => {
           </div>
           <div
             className="home__job--favorite"
-            onClick={() => handleClick(favorite)}
+            onClick={() => handleClick(applyed)}
           >
             {/* <CiHeart /> */}
             <svg
-              className={`svgimage ${favorite.isTrue ? `svgimageRed` : null}`}
+              className={`svgimage ${applyed.isTrue ? `svgimageRed` : null}`}
               width="20px"
               id="Layer_1"
               data-name="Layer 1"
@@ -150,7 +160,7 @@ const FavoriteJob = ({ favorite }) => {
         <div className="home__job--se">
           <div className="home__job--ex--sa">
             <p className="home__Job--salary">
-              <MdAttachMoney /> {salary}{" "}
+              <MdAttachMoney /> {salary}
               <span className="home__job-sub">/year</span>
             </p>
           </div>
@@ -160,9 +170,19 @@ const FavoriteJob = ({ favorite }) => {
             </p>
           </div>
         </div>
+        <div className="home__job--buttons">
+          <div className="home__job--more">
+            <Link onClick={() => handleApplied(applyed)}>Apply Delete</Link>
+          </div>
+          <div className="home__job--button__user">
+            <div className="home__job--more">
+              <Link to={`/jobs`}>Back All Jobs</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default FavoriteJob;
+export default ApplyedJob;

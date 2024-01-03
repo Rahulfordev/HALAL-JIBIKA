@@ -9,6 +9,7 @@ import "./Header.css";
 import Logo from "./Logo";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import useFetch from "../../Hooks/useFetch";
 // import { useRef } from "react";
 
 export const Header = () => {
@@ -23,7 +24,12 @@ export const Header = () => {
         console.log(error.message);
       });
   };
-  console.log(user);
+
+  //  Applyed Job List
+  const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+
+  const isApplyedData = data.filter((trueData) => trueData.isApplyed === true);
+
   // const headerEl = useRef();
   // if (typeof window !== `undefined`) {
   //   let prevScrollPosition = window.pageYOffset;
@@ -97,6 +103,11 @@ export const Header = () => {
             <NavLink className="header__link" to={"/favorite"}>
               Favorite
             </NavLink>
+            {isApplyedData.length >= 0 ? (
+              <NavLink className="header__link" to={"/applyed-job"}>
+                Applyed Job
+              </NavLink>
+            ) : null}
           </ul>
           {user ? (
             <ul className="header__links users">

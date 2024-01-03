@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
-import { FaBookReader } from "react-icons/fa";
 import knowage from "../../assets/knowledge.png";
 import quality from "../../assets/quality.png";
 import dollar from "../../assets/dollar.png";
 import { Link } from "react-router-dom";
 import "./JobDetailsShow.css";
+import axios from "axios";
+
 const JobDetailsShow = ({ jobDetails }) => {
   const {
     title,
@@ -20,6 +21,18 @@ const JobDetailsShow = ({ jobDetails }) => {
 
   const { ProgrammingSkills, ProblemSolvingAbilities } = Education;
   const { Collaboration, Documentation } = CodeDevelopment;
+
+  // const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+
+  const handleApplied = (jobDetails) => {
+    const status =
+      jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
+
+    axios.put(`http://localhost:9000/jobs/${jobDetails.id}`, {
+      ...jobDetails,
+      isApplyed: status,
+    });
+  };
 
   return (
     <div className="job__details--container">
@@ -45,7 +58,12 @@ const JobDetailsShow = ({ jobDetails }) => {
           <p>{Documentation}</p>
         </div>
         <div className="apply__buttons">
-          <Link className="apply__Button">Apply Now</Link>
+          <Link
+            onClick={() => handleApplied(jobDetails)}
+            className="apply__Button"
+          >
+            Apply Now
+          </Link>
         </div>
       </div>
       <div className="job__details--right">
