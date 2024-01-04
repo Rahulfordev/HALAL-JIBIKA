@@ -6,7 +6,7 @@ import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const ApplyedJob = ({ applyed }) => {
+const ApplyedJob = ({ applyed, applyFave, setApplyFave }) => {
   const { postDate, logo, position, salary, expireDate, location } = applyed;
   let tag = ["Full-time", "Remote"];
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
@@ -14,23 +14,51 @@ const ApplyedJob = ({ applyed }) => {
   const handleApplied = (jobDetails) => {
     const status =
       jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
-    
-    axios.put(`http://localhost:9000/jobs/${jobDetails.id}`, {
-      ...jobDetails,
-      isApplyed: status,
-    });
+
+    axios
+      .put(`http://localhost:9000/jobs/${jobDetails.id}`, {
+        ...jobDetails,
+        isApplyed: status,
+      })
+      .then(() => {
+        setApplyFave(
+          applyFave.map((applyDele) => {
+            if (applyDele.id === applyed.id) {
+              return {
+                ...applyDele,
+                isApplyed: status,
+              };
+            }
+            return applyDele;
+          })
+        );
+      });
   };
 
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
-    axios.put(`http://localhost:9000/jobs/${job.id}`, {
-      ...job,
-      isTrue: status,
-    });
+    axios
+      .put(`http://localhost:9000/jobs/${job.id}`, {
+        ...job,
+        isTrue: status,
+      })
+      .then(() => {
+        setApplyFave(
+          applyFave.map((fav) => {
+            if (fav.id === applyed.id) {
+              return {
+                ...fav,
+                isTrue: status,
+              };
+            }
+            return fav;
+          })
+        );
+      });
   };
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="3000">
       <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">

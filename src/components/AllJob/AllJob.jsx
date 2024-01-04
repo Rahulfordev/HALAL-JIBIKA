@@ -6,28 +6,48 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./AllJob.css";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
-const AllJob = ({ job, setData, data }) => {
-  const handleClick = (job) => {
-    const status = job.isTrue === "undefined" ? true : !job.isTrue;
-    axios.put(`http://localhost:9000/jobs/${job.id}`, {
-      ...job,
-      isTrue: status,
-    });
+const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
+  const { faveUpdate, setFaveUpdate } = useContext(AuthContext);
+  const handleClick = (jobs) => {
+    const status = jobs.isTrue === "undefined" ? true : !jobs.isTrue;
+    axios
+      .put(`http://localhost:9000/jobs/${jobs.id}`, {
+        ...jobs,
+        isTrue: status,
+      })
+      .then(() => {
+        faveUpdate >= 0 &&
+          setFaveUpdate((prev) => (status ? prev + 1 : prev - 1));
+
+        setFavJobs(
+          favJobs.map((favs) => {
+            if (favs.id === jobs.id) {
+              return {
+                ...favs,
+                isTrue: status,
+              };
+            }
+            return favs;
+          })
+        );
+      });
   };
 
-  const { id, postDate, logo, position, salary, expireDate, location } = job;
+  const { id, postDate, logo, position, salary, expireDate, location } = jobs;
 
   let tag = ["Full-time", "Remote"];
 
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
-  const handleDelete = (job) => {
+  const handleDelete = (jobs) => {
     axios
-      .delete(`http://localhost:9000/jobs/${job.id}`)
+      .delete(`http://localhost:9000/jobs/${jobs.id}`)
       .then((response) => {
         setData(data.filter((dat) => dat.id !== id));
-        console.log(`Deleted post with ID ${job.id}`);
+        console.log(`Deleted post with ID ${jobs.id}`);
       })
       .catch((error) => {
         console.error(error);
@@ -54,10 +74,13 @@ const AllJob = ({ job, setData, data }) => {
               </div>
             </div>
           </div>
-          <div className="home__job--favorite" onClick={() => handleClick(job)}>
+          <div
+            className="home__job--favorite"
+            onClick={() => handleClick(jobs)}
+          >
             {/* <CiHeart /> */}
             <svg
-              className={`svgimage ${job.isTrue ? `svgimageRed` : null}`}
+              className={`svgimage ${jobs.isTrue ? `svgimageRed` : null}`}
               width="20px"
               id="Layer_1"
               data-name="Layer 1"
@@ -178,7 +201,7 @@ const AllJob = ({ job, setData, data }) => {
           </div>
           <div className="home__job--button__user">
             <div className="home__job--more">
-              <Link onClick={() => handleDelete(job)}>Delete</Link>
+              <Link onClick={() => handleDelete(jobs)}>Delete</Link>
             </div>
             <div className="home__job--more">
               <Link>Edit</Link>

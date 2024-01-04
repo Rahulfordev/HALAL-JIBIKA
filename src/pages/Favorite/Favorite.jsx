@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import useFetch from "../../Hooks/useFetch";
 import FavoriteJob from "../../components/FavoriteJob/FavoriteJob";
 import Container from "../../components/common/Container";
@@ -7,16 +8,24 @@ const Favorite = () => {
   const { isError, isLoading, data, setStateDataUpdateing } = useFetch(
     "http://localhost:9000/jobs"
   );
+  const [fave, setFave] = useState(data);
 
-  const isTrueData = data.filter((trueData) => trueData.isTrue === true);
+  const isTrueData = fave.filter((trueData) => trueData.isTrue === true);
 
   const favoriteJob = isTrueData.map((favorite) => (
     <FavoriteJob
       key={favorite.id}
       favorite={favorite}
+      fave={fave}
+      setFave={setFave}
       setStateDataUpdateing={setStateDataUpdateing}
     />
   ));
+
+  useEffect(() => {
+    setFave(data);
+  }, [data]);
+
   return (
     <Container>
       <div className="home__jobs">{favoriteJob}</div>

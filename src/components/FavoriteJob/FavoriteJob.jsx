@@ -4,13 +4,27 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
-const FavoriteJob = ({ favorite }) => {
+const FavoriteJob = ({ favorite, setFave, fave }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
-    axios.put(`http://localhost:9000/jobs/${job.id}`, {
-      ...job,
-      isTrue: status,
-    });
+    axios
+      .put(`http://localhost:9000/jobs/${job.id}`, {
+        ...job,
+        isTrue: status,
+      })
+      .then(() => {
+        setFave(
+          fave.map((fav) => {
+            if (fav.id === favorite.id) {
+              return {
+                ...fav,
+                isTrue: status,
+              };
+            }
+            return fav;
+          })
+        );
+      });
   };
 
   const { postDate, logo, position, salary, expireDate, location } = favorite;
@@ -19,7 +33,7 @@ const FavoriteJob = ({ favorite }) => {
 
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="4000">
       <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">

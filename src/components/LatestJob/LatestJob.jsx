@@ -9,8 +9,10 @@ import "aos/dist/aos.css";
 
 import "./LatestJob.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const LatestJob = ({ job, setFavJob, favJob }) => {
+  const { setFaveUpdate } = useContext(AuthContext);
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
 
@@ -20,6 +22,7 @@ const LatestJob = ({ job, setFavJob, favJob }) => {
         isTrue: status,
       })
       .then(() => {
+        setFaveUpdate((prev) => (status ? prev + 1 : prev - 1));
         setFavJob(
           favJob.map((fav) => {
             if (fav.id === job.id) {

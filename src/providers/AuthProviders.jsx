@@ -55,6 +55,8 @@ const AuthProviders = ({ children }) => {
     };
   }, []);
 
+  const [faveUpdate, setFaveUpdate] = useState(0);
+
   const authInfo = {
     user,
     loading,
@@ -63,6 +65,8 @@ const AuthProviders = ({ children }) => {
     signInWithGoogle,
     signInWithGithub,
     logOut,
+    setFaveUpdate,
+    faveUpdate,
   };
 
   return (
