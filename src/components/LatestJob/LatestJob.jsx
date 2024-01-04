@@ -2,15 +2,15 @@
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
-import axios from "axios";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 import "./LatestJob.css";
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+
 const LatestJob = ({ job, setFavJob, favJob }) => {
   const { setFaveUpdate } = useContext(AuthContext);
   const handleClick = (job) => {

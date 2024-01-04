@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Container from "../../components/common/Container";
 import JobDetailsShow from "../../components/JobDetailsShow/JobDetailsShow";
 
