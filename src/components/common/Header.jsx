@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 // import { useRef } from "react";
 
 export const Header = () => {
-  const { user, logOut, faveUpdate } = useContext(AuthContext);
+  const { user, logOut, faveUpdate, setFaveUpdate } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
       .then((result) => {
@@ -32,10 +32,9 @@ export const Header = () => {
 
   const [navFave, setNaveFave] = useState(data);
 
-  const isApplyedData = navFave.filter(
-    (trueData) => trueData.isApplyed === true
-  );
-  const isTrueData = navFave.filter((trueData) => trueData.isTrue === true);
+  const isApplyedData = data.filter((trueData) => trueData.isApplyed === true);
+
+  const isTrueData = data.filter((trueData) => trueData.isTrue === true);
 
   useEffect(() => {
     setNaveFave(data);
@@ -112,7 +111,8 @@ export const Header = () => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favoritev ({isTrueData.length})<span>({faveUpdate})</span>
+              Favoritev 
+              {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
             {isApplyedData.length > 0 ? (
               <NavLink className="header__link" to={"/applyed-job"}>

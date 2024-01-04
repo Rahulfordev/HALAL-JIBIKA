@@ -55,7 +55,7 @@ const AuthProviders = ({ children }) => {
     };
   }, []);
 
-  const [faveUpdate, setFaveUpdate] = useState(0);
+  const [faveUpdate, setFaveUpdate] = useState();
 
   const authInfo = {
     user,

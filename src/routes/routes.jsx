@@ -12,6 +12,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import AddJob from "../pages/CRUD/AddJob/AddJob";
 import ApplyedJob from "../pages/ApplyedJobs/ApplyedJobs";
 import PrivateRoute from "./PrivateRoutes";
+import EditPost from "../pages/CRUD/Edit/Edit";
 
 const routes = createBrowserRouter([
   {
@@ -29,6 +30,12 @@ const routes = createBrowserRouter([
       {
         path: `/jobDetails/:id`,
         element: <JobDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:9000/jobs/${params.id}`),
+      },
+      {
+        path: `/editjobpost/:id`,
+        element: <EditPost />,
         loader: ({ params }) =>
           fetch(`http://localhost:9000/jobs/${params.id}`),
       },

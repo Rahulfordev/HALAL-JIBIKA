@@ -6,11 +6,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./AllJob.css";
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProviders";
 
 const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
-  const { faveUpdate, setFaveUpdate } = useContext(AuthContext);
   const handleClick = (jobs) => {
     const status = jobs.isTrue === "undefined" ? true : !jobs.isTrue;
     axios
@@ -19,8 +16,7 @@ const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
         isTrue: status,
       })
       .then(() => {
-        faveUpdate >= 0 &&
-          setFaveUpdate((prev) => (status ? prev + 1 : prev - 1));
+        // setFaveUpdate((prev) => (status ? prev + 1 : prev - 1));
 
         setFavJobs(
           favJobs.map((favs) => {
@@ -204,7 +200,7 @@ const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
               <Link onClick={() => handleDelete(jobs)}>Delete</Link>
             </div>
             <div className="home__job--more">
-              <Link>Edit</Link>
+              <Link to={`/editjobpost/${id}`}>Edit</Link>
             </div>
           </div>
         </div>
