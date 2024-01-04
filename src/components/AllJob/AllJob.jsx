@@ -10,6 +10,7 @@ import "./AllJob.css";
 const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
   const handleClick = (jobs) => {
     const status = jobs.isTrue === "undefined" ? true : !jobs.isTrue;
+
     axios
       .put(`http://localhost:9000/jobs/${jobs.id}`, {
         ...jobs,

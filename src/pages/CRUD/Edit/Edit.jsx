@@ -16,8 +16,7 @@ const EditPost = () => {
     postDate,
     expireDate,
   } = useLoaderData();
-  console.log(salary);
-  console.log(postDate);
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({

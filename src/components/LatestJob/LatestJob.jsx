@@ -40,7 +40,8 @@ const LatestJob = ({ job, setFavJob, favJob }) => {
   const { id, postDate, expireDate, salary, location, position, logo, tag } =
     job;
 
-  let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
+  let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();

@@ -3,7 +3,6 @@
 import { NavLink } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import AllJob from "../../components/AllJob/AllJob";
-import AddJob from "../CRUD/AddJob/AddJob";
 import "./Jobs.css";
 import { useEffect, useState } from "react";
 

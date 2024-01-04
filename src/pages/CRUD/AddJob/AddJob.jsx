@@ -2,8 +2,11 @@ import { useState } from "react";
 import Container from "../../../components/common/Container";
 import "./AddJob.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddJob = () => {
+  const navigate = useNavigate();
   const baseURL = "http://localhost:9000/jobs";
 
   const handleChange = (e) => {
@@ -34,6 +37,8 @@ const AddJob = () => {
     axios.post(baseURL, jobData).then((response) => {
       setJobData(response.data);
     });
+    toast.success("New Job Added");
+    navigate("/jobs");
   };
 
   return (
