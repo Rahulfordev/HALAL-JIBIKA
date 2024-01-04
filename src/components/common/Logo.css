@@ -2,6 +2,10 @@
   color: black;
 }
 
+.logo a {
+  font-size: 34px;
+}
+
 .logo span {
   color: var(--hover-color);
 }

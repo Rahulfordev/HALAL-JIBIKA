@@ -1,7 +1,19 @@
+.about__banner--headline {
+  flex-basis: 50%;
+}
+
+.about__banner--image {
+  flex-basis: 50%;
+}
+
+.about__banner--image img {
+  width: 100%;
+}
+
 .about__section--jobs {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  gap: 3rem;
   padding: 1rem 0;
 }
 
@@ -12,6 +24,57 @@
 
 .about__truested--button {
   background-color: var(--hover-color);
-  font-size: 25px;
+  font-size: 25px !important;
+  padding: 15px 35px !important;
   color: var(--parimary-secondary);
+}
+
+.about__banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.about__banner--explore {
+  margin-top: 1.5rem;
+}
+
+.about__banner--content h1 {
+  line-height: 1.1;
+  font-size: 40px;
+}
+
+.about__banner--content p {
+  max-width: 540px;
+}
+
+.hero__banner--title {
+  padding-bottom: 8px;
+}
+
+.hero__banner--title span {
+  color: var(--hover-color);
+}
+
+.about__banner-button {
+  background-color: var(--hover-color);
+  color: var(--parimary-secondary);
+  &:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about__banner {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .about__banner--image img {
+    width: 100%;
+  }
 }

@@ -11,6 +11,7 @@ const ApplyedJobs = () => {
   const ApplyedJobs = isApplyedData.map((applyed) => (
     <ApplyedJob key={applyed.id} applyed={applyed} />
   ));
+  
   return (
     <Container>
       <div className="home__jobs">{ApplyedJobs}</div>

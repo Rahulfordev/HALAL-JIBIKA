@@ -35,12 +35,8 @@ const AllJob = ({ job, setData, data }) => {
   };
 
   return (
-    <div>
-      <div
-        className="home__job--main"
-        data-aos="fade-up"
-        data-aos-duration="3000"
-      >
+    <div data-aos="fade-up" data-aos-duration="3000">
+      <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">
             <div>

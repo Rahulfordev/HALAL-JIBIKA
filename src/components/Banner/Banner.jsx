@@ -8,8 +8,7 @@ const Banner = () => {
       <div
         className="home__banner--headline"
         data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
+        data-aos-duration="2000"
       >
         <div className="home__banner--content">
           <h1 className="hero__banner--title">
@@ -25,7 +24,11 @@ const Banner = () => {
           <Link className="button home__banner-button">Explore Now</Link>
         </div>
       </div>
-      <div className="home__banner--image" data-aos="fade-left">
+      <div
+        className="home__banner--image"
+        data-aos="fade-left"
+        data-aos-duration="2000"
+      >
         <img src={HeroImage} alt="hero--image" />
       </div>
     </div>

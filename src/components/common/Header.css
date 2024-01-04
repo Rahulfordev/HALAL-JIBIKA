@@ -29,7 +29,7 @@ header.hide {
 .header__links {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
 }
 
 .header__links .active {

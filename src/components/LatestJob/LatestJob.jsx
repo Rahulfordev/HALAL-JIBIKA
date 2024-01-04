@@ -4,25 +4,46 @@ import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
 import axios from "axios";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./LatestJob.css";
 import { Link } from "react-router-dom";
-const LatestJob = ({ job }) => {
+import { useEffect } from "react";
+const LatestJob = ({ job, setFavJob, favJob }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
 
-    axios.put(`http://localhost:9000/jobs/${job.id}`, {
-      ...job,
-      isTrue: status,
-    });
+    axios
+      .put(`http://localhost:9000/jobs/${job.id}`, {
+        ...job,
+        isTrue: status,
+      })
+      .then(() => {
+        setFavJob(
+          favJob.map((fav) => {
+            if (fav.id === job.id) {
+              return {
+                ...fav,
+                isTrue: status,
+              };
+            }
+            return fav;
+          })
+        );
+      });
   };
 
   const { id, postDate, expireDate, salary, location, position, logo, tag } =
     job;
 
   let tagMap = tag.map((singleTag, i) => <p key={i}>{singleTag}</p>);
-
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="4000">
       <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">

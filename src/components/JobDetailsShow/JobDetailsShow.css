@@ -79,3 +79,7 @@ h2.job__details--one__title {
   align-items: center;
   gap: 20px;
 }
+
+.job__details--contact__icon svg {
+  fill: var(--hover-color);
+}

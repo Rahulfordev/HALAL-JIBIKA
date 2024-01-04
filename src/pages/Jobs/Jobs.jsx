@@ -18,7 +18,7 @@ const Jobs = () => {
           <AllJob key={job.id} job={job} data={data} setData={setData} />
         ))}
       </div>
-      <div className="add__new" data-aos="fade-up" data-aos-duration="3000">
+      <div className="add__new" data-aos="fade-up" data-aos-duration="2000">
         <NavLink className="add__new--job button" to={"/post-a-job"}>
           Add New Job
         </NavLink>

@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import "./JobDetailsShow.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const JobDetailsShow = ({ jobDetails }) => {
   const {
@@ -23,20 +26,21 @@ const JobDetailsShow = ({ jobDetails }) => {
   const { ProgrammingSkills, ProblemSolvingAbilities } = Education;
   const { Collaboration, Documentation } = CodeDevelopment;
 
-  // const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
-
   const handleApplied = (jobDetails) => {
+    if (jobDetails.isApplyed) {
+      return toast.error("Already applied");
+    }
     const status =
       jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
 
-    axios.put(`http://localhost:9000/jobs/${jobDetails.id}`, {
-      ...jobDetails,
-      isApplyed: status,
-    });
-
-    if (jobDetails.isApplyed === true) {
-      return toast.success("Signin successful!");
-    }
+    axios
+      .put(`http://localhost:9000/jobs/${jobDetails.id}`, {
+        ...jobDetails,
+        isApplyed: status,
+      })
+      .then((res) => {
+        toast.success("apply successfully completed");
+      });
   };
 
   return (
@@ -108,8 +112,8 @@ const JobDetailsShow = ({ jobDetails }) => {
           <h2 className="job__details--one__title">Company Address</h2>
 
           <div className="job__details--flex">
-            <div>
-              <img src={knowage} alt="" />
+            <div className="job__details--contact__icon">
+              <FaLocationDot />
             </div>
             <div className="job__one--content">
               <p>{location}</p>
@@ -117,8 +121,8 @@ const JobDetailsShow = ({ jobDetails }) => {
           </div>
 
           <div className="job__details--flex">
-            <div>
-              <img src={knowage} alt="" />
+            <div className="job__details--contact__icon">
+              <FaPhoneAlt />
             </div>
             <div className="job__one--content">
               <p>Call : +07 554 332 322</p>
@@ -126,8 +130,8 @@ const JobDetailsShow = ({ jobDetails }) => {
           </div>
 
           <div className="job__details--flex">
-            <div>
-              <img src={knowage} alt="" />
+            <div className="job__details--contact__icon">
+              <MdEmail />
             </div>
             <div className="job__one--content">
               <p>hello@peof.com</p>

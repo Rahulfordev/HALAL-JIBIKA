@@ -7,15 +7,21 @@ import Title from "../../components/common/Title";
 import useFetch from "../../Hooks/useFetch";
 import LatestJob from "../../components/LatestJob/LatestJob";
 import Loading from "../../components/Loading/Loading";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const { isError, isLoading, data, setData } = useFetch(
     "http://localhost:9000/jobs"
   );
-  const mapData = data
+  const [favJob, setFavJob] = useState(data);
+  useEffect(() => {
+    setFavJob(data);
+  }, [data]);
+
+  const mapData = favJob
     .slice(0, 6)
     .map((job) => (
-      <LatestJob key={job.id} job={job} data={data} setData={setData} />
+      <LatestJob key={job.id} job={job} favJob={favJob} setFavJob={setFavJob} />
     ));
 
   return (
@@ -26,7 +32,11 @@ const Home = () => {
           <Title />
           <div className="home__jobs">{isLoading ? <Loading /> : mapData}</div>
         </div>
-        <div className="home__explore--all">
+        <div
+          className="home__explore--all"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <Link to="/jobs" className="explore-button button">
             Explore All Jobs
           </Link>
