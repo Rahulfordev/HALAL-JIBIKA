@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.css";
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -10,7 +11,7 @@ import Logo from "./Logo";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import useFetch from "../../Hooks/useFetch";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 
 export const Header = () => {
   const { user, logOut, faveUpdate, setFaveUpdate } = useContext(AuthContext);
@@ -111,7 +112,7 @@ export const Header = () => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favoritev 
+              Favoritev
               {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
             {isApplyedData.length > 0 ? (
