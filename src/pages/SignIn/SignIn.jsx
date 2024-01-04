@@ -29,11 +29,19 @@ const SignIn = () => {
     // console.log(email, password);
 
     setError("");
-
+    if (email === "" && password === "") {
+      setError("Complete all fields in the form");
+      return;
+    } else if (password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        toast.success("Signin successful!");
+        toast.success("Signin successful!", {
+          toastId: "Rahul Ali",
+        });
         // console.log(loggedUser);
         form.reset();
         navigate(from, { replace: true });
@@ -49,7 +57,9 @@ const SignIn = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        toast.success("Signin successful!");
+        toast.success("Signin successful!", {
+          toastId: "Rahul Ali",
+        });
         // console.log(user);
         navigate("/");
       })
@@ -63,7 +73,9 @@ const SignIn = () => {
     signInWithGithub()
       .then((result) => {
         // console.log(result.user);
-        toast.success("Signin successful!");
+        toast.success("Signin successful!", {
+          toastId: "Rahul Ali",
+        });
         navigate("/");
       })
       .catch((error) => {

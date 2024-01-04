@@ -28,8 +28,11 @@ const JobDetailsShow = ({ jobDetails }) => {
 
   const handleApplied = (jobDetails) => {
     if (jobDetails.isApplyed) {
-      return toast.error("Already applied");
+      return toast.error("Already applied", {
+        toastId: "Rahul Ali",
+      });
     }
+
     const status =
       jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
 
@@ -39,7 +42,9 @@ const JobDetailsShow = ({ jobDetails }) => {
         isApplyed: status,
       })
       .then((res) => {
-        toast.success("apply successfully completed");
+        toast.success("apply successfully completed.", {
+          toastId: "Rahul Ali",
+        });
       });
   };
 

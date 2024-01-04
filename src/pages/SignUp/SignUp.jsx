@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { TbEye } from "react-icons/tb";
+import { IoEyeOffOutline } from "react-icons/io5";
 
 import Container from "../../components/common/Container";
 import "./SignUp.css";
@@ -10,7 +11,7 @@ import { toast } from "react-toastify";
 
 const Signup = () => {
   const [error, setError] = useState("");
-
+  const [passShow, setPassShow] = useState(false);
   const { user, createUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
   // console.log(user);
@@ -27,7 +28,10 @@ const Signup = () => {
     console.log(name, email, password, confirm);
 
     setError("");
-    if (password !== confirm) {
+    if (name === "" && email === "" && password === "" && confirm === "") {
+      setError("Complete all fields in the form");
+      return;
+    } else if (password !== confirm) {
       setError("Your password did not match");
       return;
     } else if (password.length < 6) {
@@ -38,7 +42,9 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        toast.success("Signup successful!");
+        toast.success("Signup successful!", {
+          toastId: "Rahul Ali",
+        });
         // console.log(loggedUser);
         // navigate("/");
       })
@@ -53,7 +59,9 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
-        toast.success("Signin successful!");
+        toast.success("Signin successful!", {
+          toastId: "Rahul Ali",
+        });
         navigate("/");
       })
       .catch((error) => {
@@ -66,7 +74,9 @@ const Signup = () => {
     signInWithGithub()
       .then((result) => {
         console.log(result.user);
-        toast.success("Signin successful!");
+        toast.success("Signin successful!", {
+          toastId: "Rahul Ali",
+        });
         // toast("login Successfull");
         navigate("/");
       })
@@ -96,12 +106,15 @@ const Signup = () => {
               <label htmlFor="password">Password:</label>
               <div className="password-container">
                 <input
-                  type="password"
+                  type={`${passShow ? "text" : "password"}`}
                   id="password"
                   name="password"
                   required=""
                 />
-                <TbEye id="togglePassword" />
+                <TbEye
+                  onClick={() => setPassShow(!passShow)}
+                  id="togglePassword"
+                />
               </div>
             </div>
             <div className="form-group">

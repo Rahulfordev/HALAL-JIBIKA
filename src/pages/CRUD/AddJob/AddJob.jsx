@@ -37,7 +37,9 @@ const AddJob = () => {
     axios.post(baseURL, jobData).then((response) => {
       setJobData(response.data);
     });
-    toast.success("New Job Added");
+    toast.success("New Job Added", {
+      toastId: "Rahul Ali",
+    });
     navigate("/jobs");
   };
 
