@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
+import "react-toastify/dist/ReactToastify.css";
 import knowage from "../../assets/knowledge.png";
 import quality from "../../assets/quality.png";
 import dollar from "../../assets/dollar.png";

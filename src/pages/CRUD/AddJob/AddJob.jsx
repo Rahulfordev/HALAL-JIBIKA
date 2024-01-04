@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import Container from "../../../components/common/Container";
 import "./AddJob.css";
 import axios from "axios";
