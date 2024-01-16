@@ -9,7 +9,8 @@ import {
   GithubAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export const AuthContext = createContext(null);
 
@@ -59,6 +60,22 @@ const AuthProviders = ({ children }) => {
 
   const [faveUpdate, setFaveUpdate] = useState([]);
 
+  /* firebase data get */
+  const [jobs, setJobs] = useState([]);
+  const fetchPost = async () => {
+    await getDocs(collection(db, "jobs")).then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setJobs(newData);
+    });
+  };
+
+  useEffect(() => {
+    fetchPost();
+  }, []);
+
   const authInfo = {
     user,
     loading,
@@ -69,6 +86,7 @@ const AuthProviders = ({ children }) => {
     logOut,
     setFaveUpdate,
     faveUpdate,
+    jobs,
   };
 
   return (

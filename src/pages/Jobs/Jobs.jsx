@@ -4,30 +4,17 @@ import { NavLink } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import AllJob from "../../components/AllJob/AllJob";
 import "./Jobs.css";
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/firebase";
+import { useContext, useEffect, useState } from "react";
+
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Jobs = () => {
+  const { jobs } = useContext(AuthContext);
   const { isError, isLoading, data, setData } = useFetch(
     "http://localhost:9000/jobs"
   );
-  const [favJobs, setFavJobs] = useState(data);
-  const [jobs, setJobs] = useState([]);
-  console.log(jobs);
-  const fetchPost = async () => {
-    await getDocs(collection(db, "jobs")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setJobs(newData);
-    });
-  };
 
-  useEffect(() => {
-    fetchPost();
-  }, []);
+  const [favJobs, setFavJobs] = useState(data);
 
   useEffect(() => {
     setFavJobs(data);

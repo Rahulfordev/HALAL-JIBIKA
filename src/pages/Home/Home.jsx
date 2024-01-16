@@ -7,9 +7,11 @@ import Title from "../../components/common/Title";
 import useFetch from "../../Hooks/useFetch";
 import LatestJob from "../../components/LatestJob/LatestJob";
 import Loading from "../../components/Loading/Loading";
-import { useEffect, useState } from "react"; 
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Home = () => {
+  const { jobs } = useContext(AuthContext);
   const { isError, isLoading, data, setData } = useFetch(
     "http://localhost:9000/jobs"
   );
@@ -18,7 +20,7 @@ const Home = () => {
     setFavJob(data);
   }, [data]);
 
-  const mapData = favJob
+  const mapData = jobs
     .slice(0, 6)
     .map((job) => (
       <LatestJob key={job.id} job={job} favJob={favJob} setFavJob={setFavJob} />
