@@ -4,13 +4,12 @@ const Loading = () => {
     <div
       style={{
         display: "flex",
-        height: "100vh",
+        height: "80vh",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <h3>Data is Loading...</h3>
-      <img style={{ width: "500px" }} src={loadingImg} alt="" />
+      <img style={{ width: "200px" }} src={loadingImg} alt="" />
     </div>
   );
 };

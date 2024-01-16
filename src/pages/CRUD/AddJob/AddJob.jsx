@@ -32,6 +32,7 @@ const AddJob = () => {
     try {
       const docRef = await addDoc(collection(db, "jobs"), {
         ...jobData,
+        postID: Date.now(),
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -64,7 +65,7 @@ const AddJob = () => {
                   type="text"
                   id="title"
                   name="title"
-                  required=""
+                  required
                   placeholder="UI/UX Designer"
                 />
               </div>
@@ -74,7 +75,7 @@ const AddJob = () => {
                   type="url"
                   id="logo"
                   name="logo"
-                  required=""
+                  required
                   placeholder="Company logo URL"
                 />
               </div>
@@ -87,6 +88,7 @@ const AddJob = () => {
                   id="companyName"
                   name="companyName"
                   placeholder="Apple Inc."
+                  required
                 />
               </div>
               <div className="post__form--group">
@@ -95,7 +97,7 @@ const AddJob = () => {
                   type="text"
                   id="location"
                   name="location"
-                  required=""
+                  required
                   placeholder="New York, NY 10001, USA"
                 />
               </div>
@@ -104,9 +106,10 @@ const AddJob = () => {
               <div className="post__form--group">
                 <label htmlFor="salary">Salary:</label>
                 <input
-                  type="number"
+                  type="text"
                   id="salary"
                   name="salary"
+                  required
                   placeholder="$10K"
                 />
               </div>
@@ -117,18 +120,23 @@ const AddJob = () => {
                   id="position"
                   name="position"
                   placeholder="Web Designer"
-                  required=""
+                  required
                 />
               </div>
             </div>
             <div className="add__post--input">
               <div className="post__form--group">
                 <label htmlFor="postDate">Job Post Date:</label>
-                <input type="number" id="postDate" name="postDate" />
+                <input type="number" id="postDate" required name="postDate" />
               </div>
               <div className="post__form--group">
                 <label htmlFor="expireDate">Job Expire Date:</label>
-                <input type="number" id="expireDate" name="expireDate" />
+                <input
+                  type="number"
+                  id="expireDate"
+                  required
+                  name="expireDate"
+                />
               </div>
             </div>
 
@@ -139,7 +147,7 @@ const AddJob = () => {
                   type="text"
                   id="description"
                   name="description"
-                  required=""
+                  required
                 />
               </div>
             </div>
