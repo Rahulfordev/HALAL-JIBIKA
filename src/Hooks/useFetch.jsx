@@ -4,7 +4,7 @@ import axios from "axios";
 export default function useFetch(url) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [error, setError] = useState(""); 
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setLoading(true);

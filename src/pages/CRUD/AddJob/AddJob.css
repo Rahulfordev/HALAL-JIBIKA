@@ -11,7 +11,7 @@
 
 .add__post--input {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 340px);
+  grid-template-columns: repeat(auto-fit, 320px);
   gap: 1rem;
 }
 

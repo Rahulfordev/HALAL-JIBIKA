@@ -22,6 +22,7 @@ const Banner = () => {
         </div>
         <div className="home__banner--explore">
           <Link className="button home__banner-button">Explore Now</Link>
+          <Link to={"/addData"} className="button home__banner-button">Add Data</Link>
         </div>
       </div>
       <div

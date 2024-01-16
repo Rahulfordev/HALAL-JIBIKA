@@ -13,6 +13,7 @@ import AddJob from "../pages/CRUD/AddJob/AddJob";
 import ApplyedJob from "../pages/ApplyedJobs/ApplyedJobs";
 import PrivateRoute from "./PrivateRoutes";
 import EditPost from "../pages/CRUD/Edit/Edit";
+import Todo from "../addDataToFirebase/AddData";
 
 const routes = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const routes = createBrowserRouter([
       {
         path: "/login",
         element: <SignIn />,
+      },
+      {
+        path: "/addData",
+        element: <Todo />
       },
       {
         path: "/post-a-job",

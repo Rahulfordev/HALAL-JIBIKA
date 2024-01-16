@@ -14,13 +14,13 @@ import useFetch from "../../Hooks/useFetch";
 import { toast } from "react-toastify";
 
 export const Header = () => {
-  const { user, logOut, faveUpdate, setFaveUpdate } = useContext(AuthContext);
+  const { user, logOut, faveUpdate } = useContext(AuthContext);
+
   const handleSignOut = () => {
     logOut()
       .then((result) => {
         toast.success("Signout successful!");
         const user = result.user;
-        console.log(user);
       })
       .catch((error) => {
         console.log(error.message);
@@ -112,7 +112,7 @@ export const Header = () => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favoritev
+              Favoritev({faveUpdate.length})
               {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
             {isApplyedData.length > 0 ? (

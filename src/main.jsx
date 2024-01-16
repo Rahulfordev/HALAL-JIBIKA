@@ -8,7 +8,7 @@ import AuthProviders from "./providers/AuthProviders.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProviders>
+    <AuthProviders >
       <ToastContainer position="top-center" />
       <RouterProvider router={routes} />
     </AuthProviders>

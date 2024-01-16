@@ -6,42 +6,47 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../../firebase/firebase";
+
 const AddJob = () => {
   const navigate = useNavigate();
   const baseURL = "http://localhost:9000/jobs";
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setJobData({
-      ...jobData,
-      [name]: value,
-    });
-  };
-
-  const [jobData, setJobData] = useState({
-    title: "",
-    logo: "",
-    companyName: "",
-    description: "",
-    location: "",
-    position: "",
-    salary: "",
-    postDate: "",
-    expireDate: "",
-    tag: [],
-  });
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    axios.post(baseURL, jobData).then((response) => {
-      setJobData(response.data);
-    });
-    toast.success("New Job Added", {
-      toastId: "Rahul Ali",
-    });
-    navigate("/jobs");
+    const jobData = {
+      title: e.target.title.value,
+      logo: e.target.logo.value,
+      companyName: e.target.companyName.value,
+      description: e.target.description.value,
+      location: e.target.location.value,
+      position: e.target.position.value,
+      salary: e.target.salary.value,
+      postDate: e.target.postDate.value,
+      expireDate: e.target.expireDate.value,
+    };
+    console.log(jobData);
+    /* firebase add */
+    try {
+      const docRef = await addDoc(collection(db, "jobs"), {
+        ...jobData,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+    /* firebase add */
+
+    // await axios.post(baseURL, jobData).then((response) => {
+    //   setJobData(response.data);
+    // });
+    // toast.success("New Job Added", {
+    //   toastId: "Rahul Ali",
+    // });
+    // navigate("/jobs");
   };
 
   return (
@@ -59,10 +64,8 @@ const AddJob = () => {
                   type="text"
                   id="title"
                   name="title"
-                  value={jobData.title}
                   required=""
                   placeholder="UI/UX Designer"
-                  onChange={handleChange}
                 />
               </div>
               <div className="post__form--group">
@@ -71,10 +74,8 @@ const AddJob = () => {
                   type="url"
                   id="logo"
                   name="logo"
-                  value={jobData.logo}
                   required=""
                   placeholder="Company logo URL"
-                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -85,9 +86,7 @@ const AddJob = () => {
                   type="text"
                   id="companyName"
                   name="companyName"
-                  value={jobData.companyName}
                   placeholder="Apple Inc."
-                  onChange={handleChange}
                 />
               </div>
               <div className="post__form--group">
@@ -96,10 +95,8 @@ const AddJob = () => {
                   type="text"
                   id="location"
                   name="location"
-                  value={jobData.location}
                   required=""
                   placeholder="New York, NY 10001, USA"
-                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -110,9 +107,7 @@ const AddJob = () => {
                   type="number"
                   id="salary"
                   name="salary"
-                  value={jobData.salary}
                   placeholder="$10K"
-                  onChange={handleChange}
                 />
               </div>
               <div className="post__form--group">
@@ -121,58 +116,29 @@ const AddJob = () => {
                   type="text"
                   id="position"
                   name="position"
-                  value={jobData.position}
                   placeholder="Web Designer"
                   required=""
-                  onChange={handleChange}
                 />
               </div>
             </div>
             <div className="add__post--input">
               <div className="post__form--group">
                 <label htmlFor="postDate">Job Post Date:</label>
-                <input
-                  type="number"
-                  id="postDate"
-                  name="postDate"
-                  value={jobData.postDate}
-                  onChange={handleChange}
-                />
+                <input type="number" id="postDate" name="postDate" />
               </div>
               <div className="post__form--group">
                 <label htmlFor="expireDate">Job Expire Date:</label>
-                <input
-                  type="number"
-                  id="expireDate"
-                  name="expireDate"
-                  value={jobData.expireDate}
-                  required=""
-                  onChange={handleChange}
-                />
+                <input type="number" id="expireDate" name="expireDate" />
               </div>
             </div>
 
             <div className="add__post--input">
-              <div className="post__form--group">
-                <label htmlFor="tag">Job Tag:</label>
-                <input
-                  type="text"
-                  id="tag"
-                  name="tag"
-                  value={jobData.tag}
-                  onChange={handleChange}
-                  placeholder="Full-time, Remote"
-                  required=""
-                />
-              </div>
               <div className="post__form--group">
                 <label htmlFor="description">Job Description:</label>
                 <input
                   type="text"
                   id="description"
                   name="description"
-                  value={jobData.description}
-                  onChange={handleChange}
                   required=""
                 />
               </div>
