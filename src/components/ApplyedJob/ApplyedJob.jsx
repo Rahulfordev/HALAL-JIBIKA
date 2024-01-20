@@ -16,7 +16,7 @@ const ApplyedJob = ({ applyed, applyFave, setApplyFave }) => {
       jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
 
     axios
-      .put(`http://localhost:9000/jobs/${jobDetails.id}`, {
+      .put(`https://jobs-rvc2.onrender.com/jobs/${jobDetails.id}`, {
         ...jobDetails,
         isApplyed: status,
       })

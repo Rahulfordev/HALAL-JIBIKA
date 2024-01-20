@@ -14,13 +14,13 @@ import useFetch from "../../Hooks/useFetch";
 import { toast } from "react-toastify";
 
 export const Header = () => {
-  const { user, logOut, faveUpdate } = useContext(AuthContext);
-
+  const { user, logOut, faveUpdate, setFaveUpdate } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
       .then((result) => {
         toast.success("Signout successful!");
         const user = result.user;
+        console.log(user);
       })
       .catch((error) => {
         console.log(error.message);
@@ -29,7 +29,9 @@ export const Header = () => {
   };
 
   //  Applyed Job List
-  const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+  const { isError, isLoading, data } = useFetch(
+    "https://jobs-rvc2.onrender.com/jobs/jobs"
+  );
 
   const [navFave, setNaveFave] = useState(data);
 
@@ -112,7 +114,7 @@ export const Header = () => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favoritev({faveUpdate.length})
+              Favoritev
               {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
             {isApplyedData.length > 0 ? (

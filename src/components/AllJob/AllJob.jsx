@@ -12,7 +12,7 @@ const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
     const status = jobs.isTrue === "undefined" ? true : !jobs.isTrue;
 
     axios
-      .put(`http://localhost:9000/jobs/${jobs.id}`, {
+      .put(`https://jobs-rvc2.onrender.com/jobs/${jobs.id}`, {
         ...jobs,
         isTrue: status,
       })

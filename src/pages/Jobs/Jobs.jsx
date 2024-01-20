@@ -4,16 +4,12 @@ import { NavLink } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import AllJob from "../../components/AllJob/AllJob";
 import "./Jobs.css";
-import { useContext, useEffect, useState } from "react";
-
-import { AuthContext } from "../../providers/AuthProviders";
+import { useEffect, useState } from "react";
 
 const Jobs = () => {
-  const { jobs } = useContext(AuthContext);
   const { isError, isLoading, data, setData } = useFetch(
-    "http://localhost:9000/jobs"
+    "https://jobs-rvc2.onrender.com/jobs"
   );
-
   const [favJobs, setFavJobs] = useState(data);
 
   useEffect(() => {
@@ -23,7 +19,7 @@ const Jobs = () => {
   return (
     <div>
       <div className="home__jobs">
-        {jobs?.map((jobs) => (
+        {favJobs?.map((jobs) => (
           <AllJob
             key={jobs.id}
             jobs={jobs}
@@ -33,16 +29,6 @@ const Jobs = () => {
             setData={setData}
           />
         ))}
-        {/* {favJobs?.map((jobs) => (
-          <AllJob
-            key={jobs.id}
-            jobs={jobs}
-            favJobs={favJobs}
-            setFavJobs={setFavJobs}
-            data={data}
-            setData={setData}
-          />
-        ))} */}
       </div>
       <div className="add__new" data-aos="fade-up" data-aos-duration="2000">
         <NavLink className="add__new--job button" to={"/post-a-job"}>

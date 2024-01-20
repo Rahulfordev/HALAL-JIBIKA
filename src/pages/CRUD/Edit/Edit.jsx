@@ -41,7 +41,7 @@ const EditPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const postJobs = await axios.put(
-      `http://localhost:9000/jobs/${id}`,
+      `https://jobs-rvc2.onrender.com/jobs/${id}`,
       formData
     );
     console.log(postJobs);

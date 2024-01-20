@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 
 const ApplyedJobs = () => {
   // eslint-disable-next-line no-unused-vars
-  const { isError, isLoading, data } = useFetch("http://localhost:9000/jobs");
+  const { isError, isLoading, data } = useFetch(
+    "https://jobs-rvc2.onrender.com/jobs"
+  );
   const [applyFave, setApplyFave] = useState(data);
   const isApplyedData = applyFave.filter(
     (trueData) => trueData.isApplyed === true

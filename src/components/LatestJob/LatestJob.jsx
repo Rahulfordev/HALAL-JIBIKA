@@ -12,16 +12,17 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const LatestJob = ({ job, setFavJob, favJob }) => {
-  const { setFaveUpdate, faveUpdate } = useContext(AuthContext);
+  const { setFaveUpdate } = useContext(AuthContext);
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
 
     axios
-      .put(`http://localhost:9000/jobs/${job.id}`, {
+      .put(`https://jobs-rvc2.onrender.com/jobs/${job.id}`, {
         ...job,
         isTrue: status,
       })
       .then(() => {
+        setFaveUpdate((prev) => (status ? prev + 1 : prev - 1));
         setFavJob(
           favJob.map((fav) => {
             if (fav.id === job.id) {

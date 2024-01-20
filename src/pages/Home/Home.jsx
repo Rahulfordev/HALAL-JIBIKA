@@ -7,20 +7,18 @@ import Title from "../../components/common/Title";
 import useFetch from "../../Hooks/useFetch";
 import LatestJob from "../../components/LatestJob/LatestJob";
 import Loading from "../../components/Loading/Loading";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProviders";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-  const { jobs } = useContext(AuthContext);
   const { isError, isLoading, data, setData } = useFetch(
-    "http://localhost:9000/jobs"
+    "https://jobs-rvc2.onrender.com/jobs"
   );
   const [favJob, setFavJob] = useState(data);
   useEffect(() => {
     setFavJob(data);
   }, [data]);
 
-  const mapData = jobs
+  const mapData = favJob
     .slice(0, 6)
     .map((job) => (
       <LatestJob key={job.id} job={job} favJob={favJob} setFavJob={setFavJob} />

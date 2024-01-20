@@ -4,7 +4,7 @@ import JobDetailsShow from "../../components/JobDetailsShow/JobDetailsShow";
 
 const JobDetails = () => {
   const jobDetails = useLoaderData();
-
+  
   return (
     <div>
       <Container>

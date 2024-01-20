@@ -8,7 +8,7 @@ const FavoriteJob = ({ favorite, setFave, fave }) => {
   const handleClick = (job) => {
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios
-      .put(`http://localhost:9000/jobs/${job.id}`, {
+      .put(`https://jobs-rvc2.onrender.com/jobs/${job.id}`, {
         ...job,
         isTrue: status,
       })
