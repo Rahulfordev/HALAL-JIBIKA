@@ -117,9 +117,9 @@ export const Header = () => {
               Favoritev
               {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
-            {isApplyedData.length > 0 ? (
+            {user ? (
               <NavLink className="header__link" to={"/applyed-job"}>
-                Applyed Job ({isApplyedData.length})
+                Applyed Job
               </NavLink>
             ) : (
               ""

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import Container from "../../components/common/Container";
 import { SignInDefault } from "../../components/common";
 import "./SignIn.css";
@@ -85,6 +85,10 @@ const SignIn = () => {
         setError(error.message);
       });
   };
+
+  if (user) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div>
       <Container>

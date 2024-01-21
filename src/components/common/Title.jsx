@@ -4,8 +4,8 @@ const Title = () => {
   return (
     <div
       className="home__job--titles"
-      data-aos="fade-up"
-      data-aos-duration="1000"
+      // data-aos="fade-up"
+      // data-aos-duration="1000"
     >
       <span>Jobs Category</span>
       <h2>Choose Your Desire Category</h2>

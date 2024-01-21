@@ -1,5 +1,5 @@
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { TbEye } from "react-icons/tb";
 import { IoEyeOffOutline } from "react-icons/io5";
 
@@ -87,6 +87,10 @@ const Signup = () => {
         setError(error.message);
       });
   };
+
+  if (user) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="signup-section">
       <Container>
