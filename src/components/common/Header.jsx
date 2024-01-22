@@ -115,7 +115,6 @@ export const Header = () => {
 
             <NavLink className="header__link" to={"/favorite"}>
               Favoritev
-              {/* ({isTrueData.length})<span>({faveUpdate.length})</span> */}
             </NavLink>
             {user ? (
               <NavLink className="header__link" to={"/applyed-job"}>
