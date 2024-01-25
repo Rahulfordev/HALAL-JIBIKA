@@ -11,8 +11,11 @@ import { toast } from "react-toastify";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { AuthContext } from "../../providers/AuthProviders";
+import { useContext } from "react";
 
 const JobDetailsShow = ({ jobDetails }) => {
+  const { user } = useContext(AuthContext);
   const {
     title,
     salary,
@@ -34,19 +37,25 @@ const JobDetailsShow = ({ jobDetails }) => {
       });
     }
 
-    const status =
-      jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
+    if (user) {
+      const status =
+        jobDetails.isApplyed === "undefined" ? true : !jobDetails.isApplyed;
 
-    axios
-      .put(`https://jobs-rvc2.onrender.com/jobs/${jobDetails.id}`, {
-        ...jobDetails,
-        isApplyed: status,
-      })
-      .then((res) => {
-        toast.success("apply successfully completed.", {
-          toastId: "Rahul Ali",
+      axios
+        .put(`https://jobs-rvc2.onrender.com/jobs/${jobDetails.id}`, {
+          ...jobDetails,
+          isApplyed: status,
+        })
+        .then((res) => {
+          toast.success("apply successfully completed.", {
+            toastId: "Rahul Ali",
+          });
         });
+    } else {
+      return toast.error("Please login to apply", {
+        toastId: "Rahul Ali",
       });
+    }
   };
 
   return (
