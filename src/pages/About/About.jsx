@@ -8,11 +8,7 @@ const About = () => {
     <div>
       <Container>
         <div className="about__banner">
-          <div
-            className="about__banner--headline"
-            data-aos="fade-right"
-            data-aos-duration="2000"
-          >
+          <div className="about__banner--headline">
             <div className="about__banner--content">
               <h1 className="hero__banner--title">
                 Trusted & Popular Job Portal
@@ -41,11 +37,7 @@ const About = () => {
               <Link className="button about__truested--button">100% Trust</Link>
             </div>
           </div>
-          <div
-            className="about__banner--image"
-            data-aos="fade-left"
-            data-aos-duration="2000"
-          >
+          <div className="about__banner--image">
             <img src={HeroImage} alt="hero--image" />
           </div>
         </div>
