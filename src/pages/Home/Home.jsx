@@ -30,7 +30,9 @@ const Home = () => {
         <Banner />
         <div>
           <Title />
-          <div className="home__jobs">{isLoading ? <Loading /> : mapData}</div>
+          <div className="home__jobs">
+            {isLoading ? <h4>Please wait few a seconds</h4> : mapData}
+          </div>
         </div>
         <div
           className="home__explore--all"
