@@ -9,7 +9,7 @@ const Loading = () => {
         justifyContent: "center",
       }}
     >
-      <img style={{ maxWidth: "100%" }} src={loadingImg} alt="" />
+      <img style={{ width: "250px" }} src={loadingImg} alt="" />
     </div>
   );
 };
