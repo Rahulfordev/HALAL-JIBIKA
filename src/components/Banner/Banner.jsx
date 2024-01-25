@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="home__banner">
-      <div
-        className="home__banner--headline"
-        data-aos="fade-right"
-        data-aos-duration="2000"
-      >
+      <div className="home__banner--headline">
         <div className="home__banner--content">
           <h1 className="hero__banner--title">
             Find The Job That Fits <br /> <span>Your Life</span>

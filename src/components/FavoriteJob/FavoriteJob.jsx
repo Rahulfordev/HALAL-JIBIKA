@@ -33,7 +33,7 @@ const FavoriteJob = ({ favorite, setFave, fave }) => {
 
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
   return (
-    <div data-aos="fade-up" data-aos-duration="4000">
+    <div>
       <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">

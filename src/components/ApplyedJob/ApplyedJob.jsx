@@ -58,7 +58,7 @@ const ApplyedJob = ({ applyed, applyFave, setApplyFave }) => {
   };
 
   return (
-    <div data-aos="fade-up" data-aos-duration="3000">
+    <div>
       <div className="home__job--main">
         <div className="home__job--data">
           <div className="home__job--info">

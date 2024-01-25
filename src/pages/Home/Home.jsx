@@ -31,14 +31,10 @@ const Home = () => {
         <div>
           <Title />
           <div className="home__jobs">
-            {isLoading ? <h4>Please wait few a seconds</h4> : mapData}
+            {data.length === 0 ? <Loading /> : mapData}
           </div>
         </div>
-        <div
-          className="home__explore--all"
-          data-aos="fade-up"
-          data-aos-duration="2000"
-        >
+        <div className="home__explore--all">
           <Link to="/jobs" className="explore-button button">
             Explore All Jobs
           </Link>

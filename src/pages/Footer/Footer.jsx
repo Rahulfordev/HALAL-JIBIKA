@@ -10,26 +10,14 @@ const Footer = () => {
       <Container>
         <div className="footer__container">
           <div className="footer__head--content">
-            <div
-              className="footer__logo"
-              data-aos="fade-right"
-              data-aos-duration="2000"
-            >
+            <div className="footer__logo">
               <Logo />
             </div>
-            <div
-              className="footer__icons"
-              data-aos="fade-left"
-              data-aos-duration="2000"
-            >
+            <div className="footer__icons">
               <Social />
             </div>
           </div>
-          <div
-            className="footer__items"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
+          <div className="footer__items">
             <div className="footer-item">
               <h4>company</h4>
               <ul>

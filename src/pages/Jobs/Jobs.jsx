@@ -5,6 +5,7 @@ import useFetch from "../../Hooks/useFetch";
 import AllJob from "../../components/AllJob/AllJob";
 import "./Jobs.css";
 import { useEffect, useState } from "react";
+import Loading from "../../components/Loading/Loading";
 
 const Jobs = () => {
   const { isError, isLoading, data, setData } = useFetch(
@@ -19,18 +20,22 @@ const Jobs = () => {
   return (
     <div>
       <div className="home__jobs">
-        {favJobs?.map((jobs) => (
-          <AllJob
-            key={jobs.id}
-            jobs={jobs}
-            favJobs={favJobs}
-            setFavJobs={setFavJobs}
-            data={data}
-            setData={setData}
-          />
-        ))}
+        {data.length === 0 ? (
+          <Loading />
+        ) : (
+          favJobs?.map((jobs) => (
+            <AllJob
+              key={jobs.id}
+              jobs={jobs}
+              favJobs={favJobs}
+              setFavJobs={setFavJobs}
+              data={data}
+              setData={setData}
+            />
+          ))
+        )}
       </div>
-      <div className="add__new" data-aos="fade-up" data-aos-duration="2000">
+      <div className="add__new">
         <NavLink className="add__new--job button" to={"/post-a-job"}>
           Add New Job
         </NavLink>
