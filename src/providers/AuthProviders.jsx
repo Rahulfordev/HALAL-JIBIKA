@@ -62,19 +62,6 @@ const AuthProviders = ({ children }) => {
 
   /* firebase data get */
   const [jobs, setJobs] = useState([]);
-  const fetchPost = async () => {
-    await getDocs(collection(db, "jobs")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setJobs(newData);
-    });
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, []);
 
   const authInfo = {
     user,
