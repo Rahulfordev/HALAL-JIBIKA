@@ -41,7 +41,7 @@ const AllJob = ({ jobs, setData, data, setFavJobs, favJobs }) => {
 
   const handleDelete = (jobs) => {
     axios
-      .delete(`http://localhost:9000/jobs/${jobs.id}`)
+      .delete(`https://jobs-rvc2.onrender.com/jobs/${jobs.id}`)
       .then((response) => {
         setData(data.filter((dat) => dat.id !== id));
         console.log(`Deleted post with ID ${jobs.id}`);

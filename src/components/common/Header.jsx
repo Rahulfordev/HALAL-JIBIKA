@@ -13,7 +13,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import useFetch from "../../Hooks/useFetch";
 import { toast } from "react-toastify";
 
-export const Header = () => {
+export const Header = ({ isShow, setIsShow }) => {
   const { user, logOut, faveUpdate, setFaveUpdate } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
@@ -52,20 +52,19 @@ export const Header = () => {
       const { current } = headerEl;
       // setMobileNav(false)
       if (curScrollPosition > 100) {
-        current.classList.add("compaq");
+        current?.classList.add("compaq");
       } else {
-        current.classList.remove("compaq");
+        current?.classList.remove("compaq");
       }
       if (difference < 0) {
-        current.classList.add("hide");
+        current?.classList.add("hide");
       } else {
-        current.classList.remove("hide");
+        current?.classList.remove("hide");
       }
       prevScrollPosition = curScrollPosition;
     });
   }
 
-  const [isShow, setIsShow] = useState(false);
   return (
     <header className="header-section" ref={headerEl}>
       <Container>
@@ -88,7 +87,11 @@ export const Header = () => {
                 className="mobile__nab--hamburger"
                 onClick={() => setIsShow(!isShow)}
               >
-                {isShow ? <RxCross2 /> : <RxHamburgerMenu />}
+                {isShow ? (
+                  <RxCross2 className="navIcon" />
+                ) : (
+                  <RxHamburgerMenu className="navIcon" />
+                )}
               </li>
             </ul>
           </div>

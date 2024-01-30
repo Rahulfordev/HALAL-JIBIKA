@@ -20,7 +20,7 @@ const Jobs = () => {
   return (
     <div>
       <div className="home__jobs">
-        {data.length === 0 ? (
+        {data?.length === 0 ? (
           <Loading />
         ) : (
           favJobs?.map((jobs) => (
