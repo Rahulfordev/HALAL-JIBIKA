@@ -117,7 +117,7 @@ export const Header = ({ isShow, setIsShow }) => {
             </NavLink>
 
             <NavLink className="header__link" to={"/favorite"}>
-              Favoritev
+              Favorite
             </NavLink>
             {user ? (
               <NavLink className="header__link" to={"/applyed-job"}>
