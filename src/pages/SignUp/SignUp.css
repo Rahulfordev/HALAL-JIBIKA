@@ -1,5 +1,6 @@
 .registration__form--container,
-.login__form--container {
+.login__form--container,
+.contact-form--container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
