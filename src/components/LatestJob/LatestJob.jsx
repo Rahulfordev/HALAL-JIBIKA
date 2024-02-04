@@ -2,8 +2,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import axios from "axios";
 
 import "./LatestJob.css";
@@ -42,10 +40,6 @@ const LatestJob = ({ job, setFavJob, favJob }) => {
 
   let tagMap = tag?.map((singleTag, i) => <p key={i}>{singleTag}</p>);
 
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
   return (
     <div>
       <div className="home__job--main">
