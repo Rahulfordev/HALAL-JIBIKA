@@ -24,7 +24,7 @@
 1. Clone the repository:
 
    ```
-   git clone https://github.com/devRezaulKarim/halal-jibika.git
+   git clone https://github.com/Rahulfordev/HALAL-JIBIKA.git
    ```
 
 2. Install dependencies:
