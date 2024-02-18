@@ -1,7 +1,5 @@
 # HALAL JIBIKA
 
-## [Live Link](https://halal-jibika-rahulfordev.netlify.app/)
-
 ## Technologies Used
 
 - React
